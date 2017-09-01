@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Свойства location</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="_css/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="wrapper">
+            
+            <div id="matrixImgs">
+                <img src="_img/DOM.jpg" alt="" width="150" height="150" />
+                <img src="_img/DOM.jpg" alt="" width="150" height="150" />
+                <img src="_img/DOM.jpg" alt="" width="150" height="150" />
+                <img src="_img/DOM.jpg" alt="" width="150" height="150" />
+                <img src="_img/DOM.jpg" alt="" width="150" height="150" />
+            </div>
+            
+            <script type="text/javascript">
+                var p = document.getElementById('matrixImgs');
+                alert("Текст до изменения:" + p.innerHTML);
+                
+                p.innerHTML = "<p><strong>Текст вместо картинок!</strong></p>\n<p><strong>Текст вместо картинок!</strong></p>";
+                alert("\nТекст после изменения:\n" + p.innerHTML);
+            </script>
+        </div>
+    </body>
+</html>

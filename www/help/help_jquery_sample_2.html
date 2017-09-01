@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Изменение текста с помощью свойства .html()</title>
+        <meta charset="UTF-8">
+        <meta charset="UTF-8">        
+        <link href="_css/style.css" rel="stylesheet" type="text/css">
+        <script src="_js/jquery-1.5.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            
+            <div id="matrixImgs">
+                <img src="_img/anime.jpg" alt="" width="150" height="150" />
+                <img src="_img/anime.jpg" alt="" width="150" height="150" />
+                <img src="_img/anime.jpg" alt="" width="150" height="150" />
+                <img src="_img/anime.jpg" alt="" width="150" height="150" />
+                <img src="_img/anime.jpg" alt="" width="150" height="150" />
+            </div>
+            
+            <script type="text/javascript">
+                var p = $('#matrixImgs');
+                alert("Код до изменения:\n" + p.html());
+                
+                p.html('<p><strong>Текст вместо картинок!</strong></p>\n<p><strong>Текст вместо картинок!</strong></p>');
+                alert("\nТекст после изменения:\n" + p.html());
+            </script>
+        </div>
+    </body>
+</html>

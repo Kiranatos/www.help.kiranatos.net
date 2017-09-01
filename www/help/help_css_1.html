@@ -1,0 +1,566 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Помощь по CSS</title>
+	<link href="_css/css_help1.css" type="text/css" rel="stylesheet">
+	<link href="_css/style.css" type="text/css" rel="stylesheet">
+	<script src="_js/equalHeight.js" type="text/javascript"></script>
+	<script src="_js/jquery-1.5.min.js" type="text/javascript"></script>	
+</head>
+
+<body>
+	<div class="wrapper">
+
+	<p class="headOfTitle">Пример селекторов тегов, идентефикаторов и классов:</p>
+        <img src="_img/selectors.jpg" alt="Селекторы" width="500" height="200">
+        <div class="block">
+        <p>Групповые селекторы записываются:</p>
+        <div class="comment">
+            <p>p, #name, .nameOfClass {</p>
+            <p>...</p>
+            <p>}</p>
+        </div>	<!-- class="comment" -->
+        </div>        
+        <div class="block">
+            <p>Пример обращения к потомкам, на примере списка:</p>
+            <div class="comment">
+                <p>ul li {</p>
+                <p>...</p>
+                <p>}</p>
+            </div>	<!-- class="comment" -->
+            <p>где тег ul - родитель, а тег li - потомок.</p>
+            <img src="_img/potomok.jpg" alt="Схема наследования" width="500" height="180">
+        </div>
+        <div class="block">
+            <div class="comment">
+                <p>#id_name p a {</p>
+                <p>...</p>
+                <p>}</p>
+            </div>	<!-- class="comment" -->
+            <p> - это означает: выбрать ссылки &#60a&#62 внутри тегов абзаца &#60p&#62, которые находятся в объекте с индефикатором id="id_name".</p>
+        </div>
+        <div class="block">
+            <div class="comment">
+                <p>#divName + p {</p>
+                <p>...</p>
+                <p>}</p>
+            </div>	<!-- class="comment" -->
+            <p> - это означает: выбрать следуюющий абзац &#60p&#62, который идёт после объекта с индефикатором id="divName". (НЕ ВНУТРИ ЭТОГО ОБЪЕКТА, А СНАРУЖИ ЗА НИМ)</p>
+        </div>
+        <div class="block">
+            <p>Выбор дочерних тэгов (ВЛОЖЕННЫЕ ТЕГИ В ДОЧЕРНИЕ НЕ ВЫБИРАЮТСЯ):</p>
+            <div class="comment">
+                <p>#divName > img {</p>
+                <p>...</p>
+                <p>}</p>
+            </div>	<!-- class="comment" -->
+            <p> - это означает: выбрать картинки внутри объекта с индефикатором id="divName", но не выбирать картинки которые вложены в других вложенных тегах этого же объекта.</p>
+        </div>
+		
+	
+	<p class="headOfTitle">Пример псевдоселекторов:</p>
+		<div id="example_1"> ссылка: <a href="../index.html" title="ссылка для примера" target="_top">На главную страницу</a></div>
+		<p>a:link - непосещённая ссылка</p>
+		<p>a:visited - посещённая ссылка</p>
+		<p>a:hover - при наведении мыши</p>
+		<p>a:active - при нажатии</p>
+
+	<p class="headOfTitle">Пример использования шрифтов (font-family):</p>
+		<p>Шрифты делятся на с засечками (serif), без засечек (sans-serif), моноширные (monospace, каждая буква занимает одну и ту же ширину) и курсив (cursive).</p>	
+		<p>Строка кода: <span class="comment">font-family: Verdana, Arial, sans-serif;</span> означает, что берётся шрифт Verdana если его нет, то Arial, если и этого нету, то из семейства sans-serif</p>
+		<p>Если название шрифта состоит из нескольких слов, его заключают в кавычки - "Comic Sans MS"</p>
+		<div class="wwww">Дополнительные материалы и ресурсы: 
+			<a href="http://www.ampsoft.net/webdesign-l/WindowsMacFonts.html" title="Шрифты" target="_blank">Основные шрифты</a>
+		</div> <!-- class="wwww" -->
+			
+	<p class="headOfTitle">Пример размеров и оформления шрифтов (font-size):</p>
+		<img src="_img/font-size.jpg" alt="Размер Шрифта" width="500" height="340">
+		<p>em - пришло из книгопечатния</p>
+		<p>pt - пришло из типографии</p>	
+		<p>Строка кода: <span class="comment">font-style: italic;</span> </p>
+		<p>italic - курсив</p>
+		<p>Строка кода: <span class="comment">font-weight: normal;</span> задает насыщенность(жирность)</p>
+		<p>normal - обычный</p>
+		<p>bold - жирный</p>		
+		<p>100-900 - шаг 100, normal=400, bold=700, редко используется</p>
+
+	<p class="headOfTitle">Пример подчёркивания (text-decoration):</p>		
+		<p id="decor1">text-decoration: blink</p>
+		<p id="decor2">text-decoration: inherit</p>
+		<p id="decor3">text-decoration: line-through</p>		
+		<p id="decor4">text-decoration: none</p>
+		<p id="decor5">text-decoration: overline</p>
+		<p id="decor6">text-decoration: underline</p>
+		<div id="wwww">Дополнительные материалы и ресурсы: 
+			<a href="http://htmlbook.ru/css/text-decoration" title="О подчёркивании текста" target="_blank">Информация про text-decoration</a>
+		</div> <!-- class="wwww" -->
+
+	<p class="headOfTitle">Выравнивание текста (text-align):</p>
+		<div class="comment">text-align: left | center | right| justify;</div>
+	<p class="headOfTitle">Красная строка - отсуп первой строки абзаца (text-indent):</p>
+		<div class="comment">text-indent: 20 px;</div>
+	<p class="headOfTitle">Междустрочный интервал (line-height):</p>		
+		<p><span class="comment">line-height:5px;</span> - в пикселях.</p>
+		<p><span class="comment">line-height:2.5;</span> - множитель от текущего размера.</p>
+		<p><span class="comment">line-height:100%;</span> - в процентах</p>
+		<p><span class="comment">line-height:normal;</span></p>		
+	<p class="headOfTitle">Интервал между словами(line-height):</p>
+		<p><span class="comment">word-spacing:normal</span> - задается только в пикселях 12px. Если задано: <span class="comment">text-align: justify;</span>(по всей ширине), то word-spacing игнорируется</p>
+	<p class="headOfTitle">Интервал между буквами</p>
+		<div class="comment">letter-spacing</div>		
+	<p class="headOfTitle">Изменение регистра</p>
+		<div class="comment">text-transform: capitalize | lowercase | uppercase;</div>	
+
+	<p class="headOfTitle">Сокращённая запись</p>
+		Расширенная запись:
+		<div class="comment">
+			<p>font-style:italic;</p>
+			<p>font-weight:bold;</p>
+			<p>font-size:16px;</p>
+			<p>line-height:80px;</p>
+			<p>font-family:Arial;</p>
+		</div>	
+		<p>Сокращённая запись:<span class="comment"> font: italic bold 16px/80px Arial;</span></p>	
+		<img src="_img/mini.png" alt="схема сокращённой записи" width="500">
+
+	<p class="headOfTitle">Рамки</p>		
+		<div id="dotted">dotted</div>
+		<div id="dashed">dashed</div>
+		<div id="solid">solid</div>
+		<div id="double">double</div>
+		<div id="groove">groove</div>
+		<div id="ridge">ridge</div>
+		<div id="inset">inset</div>
+		<div id="outset">outset</div>
+		Расширенная запись:
+		<div class="comment">
+			<p>border-top-width:2px;</p>
+			<p>border-top-style:dotted;</p>
+			<p>border-top-color:#0033FF;</p>
+		</div>	
+		<p>Сокращённая запись:<span class="comment"> border-top:2px dotted #0033FF;</span></p>	
+		<img src="_img/border.jpg" alt="схема сокращённой записи" width="500">
+		<p>Просто Контур (в отличии от Рамки - не влияет на размеры объектов) <span class="comment">outline:4px solid #4B4B4B;</span></p>
+
+	<p class="headOfTitle">Оформление списка:</p>
+		<p>Стили маркеров по тегу <span class="comment">list-style-type</span></p>
+		<ul class="list1">
+			<li>список с тегом ul и пунктами с тегами li</li>
+			<li>список с тегом ul и пунктами с тегами li</li>
+			<li>список с тегом ul и пунктами с тегами li</li>			
+		</ul>
+		<img src="_img/list.jpg" width="500" height="400">
+		<p>Картинка вместо маркера с тегом <span class="comment">list-style-image</span></p>
+		<ul class="list2">
+			<li>список с тегом ul и пунктами с тегами li</li>
+			<li>список с тегом ul и пунктами с тегами li</li>
+			<li>список с тегом ul и пунктами с тегами li</li>			
+		</ul>
+		<p>команда list-style-position:inside; делает так, чтобы маркеры были внутри списка. Изначально маркеры находятся снаружию Пример:</p>
+		<ul class="list3">
+			<li>список с тегом ul и пунктами с тегами li</li>
+			<li>список с тегом ul и пунктами с тегами li</li>
+			<li>список с тегом ul и пунктами с тегами li</li>			
+		</ul>
+		<ul class="list4">
+			<li>список с тегом ul и пунктами с тегами li</li>
+			<li>список с тегом ul и пунктами с тегами li</li>
+			<li>список с тегом ul и пунктами с тегами li</li>			
+		</ul>
+		
+		
+		<p>Для</p> 
+		<p class="comment">list-style-image:url(../_img/Arrow.png);</p>
+		<p class="comment">list-style-position:inside;</p>
+		<p>сокращённая запись:</p> 
+		<p class="comment">list-style:inside url(../_img/Arrow.png);</p>
+		<img src="_img/list2.jpg">
+		
+	<p class="headOfTitle">Наследование:</p>
+		<div id="wwww">Дополнительные материалы и ресурсы: 
+			<a href="http://www.w3.org/TR/CSS21/propidx.html" target="_blank">Наследование</a>
+		</div>
+		<img src="_img/potomok3.jpg">
+		<img src="_img/potomok2.jpg">
+	
+	<p class="headOfTitle">Блочная модель, margin и padding:</p>
+		<img src="_img/border2.jpg">
+		<p>развёрнутая запись:</p>
+		<div class="comment">
+			<p>padding-top:20px;</p>
+			<p>padding-right:30px;</p>
+			<p>padding-bottom:40px;</p>
+			<p>padding-left:50px;</p>
+		</div>
+		<p>Сокращённая:</p>
+			<p> <span class="comment">padding:20px 30px 40px 50px;</span> (сверху ; справа ; снизу ; слева)</p>
+			<p> <span class="comment">margin:20px auto 40px auto;</span> (сверху ; справа ; снизу ; слева) справа и слева подобраны автоматически равными</p>
+			<p> <span class="comment">padding:20px 50px;</span> (сверху и снизу ; справа и слева)</p>
+			<p> <span class="comment">margin:20px 50px;</span> (сверху и снизу ; справа и слева)</p>
+		<p>Тег width (px или % от родителя) задает ширину для содержимого блока. margin и padding задаются ОТДЕЛЬНО!</p>	
+		<p>Примеры:</p>
+		<p>При не заданных width и height</p>		
+		<h1 class="ex_1">Some Texts Some Texts Some Texts Some Texts Some Texts Some Texts Some Texts Some Texts </h1>
+		<p>При заданных width и height</p>		
+		<h1 class="ex_2">Some Texts Some Texts Some Texts Some Texts Some Texts Some Texts Some Texts Some Texts </h1>
+		<p>При заданных width, height и <span class="comment">overflow:hidden</span></p>		
+		<h1 class="ex_3">Some Texts Some Texts Some Texts Some Texts Some Texts Some Texts Some Texts Some Texts </h1>
+		<p>При заданных width, height и <span class="comment">overflow:scroll</span></p>		
+		<h1 class="ex_4">Some Texts Some Texts Some Texts</h1>
+		<p>При заданных width, height и <span class="comment">overflow:auto</span></p>		
+		<h1 class="ex_5">Some Texts Some Texts Some Texts Some Texts Some Texts Some Texts Some Texts Some Texts </h1>
+		<h2>Помнить про конфликт полей: margin может выйти за границы объекта и посунуть все элеметы, лучше использовать padding!!! </h2>
+
+	<p class="headOfTitle">Блочная и встроенная модель</p>	
+		<p>Разница, между блочной (div, p, h1,...) <img src="_img/block.jpg"></p>
+		<p>и встроенной(span, a, strong,...) моделью:<img src="_img/in.jpg"></p>
+		<p>Чтобы блочный элемент сделать встроенным, в CSS прописать: <span class="comment">display:inline;</span></p>
+		<p>Чтобы встроенный элемент сделать блочным, в CSS прописать: <span class="comment">display:block;</span></p>
+
+	<p class="headOfTitle">Оформление</p>	
+		<p>Фоновый цвет:<span class="comment">background-color:#B4B4B4;</span></p>
+		<p>Фоновая картинка:<span class="comment">background-image:url(../img/fon.jpg);</span></p>		
+		<p>Управление повторением фоновой картинки:<span class="comment">background-repeat:no-repeat | repeat-x | repeat-y;</span></p>		
+		<p>Позицирование фонового изображения:<span class="comment">background-position: left center;</span></p>
+		<p><span class="comment">background-position: 50px 80px;</span></p>				
+		<p>Фиксация фонового изображения при прокурчивании:<span class="comment">background-attachment: fixed;</span> при этом позициррование уже изменяется/идёт не от блока div, а от окна браузера</p>
+		<img src="_img/background.jpg" width="950">
+		<p>Сокращённая запись:<span class="comment">background: url(../img/image.jpg) no-repeat fixed 0 120px;</span></p>
+
+	<p class="headOfTitle">Оформление таблиц, с помощью CSS</p>
+		<img src="_img/tabl1.jpg">
+		<img src="_img/tabl2.jpg">
+		<p><span class="comment">border-collapse: collapse;</span> - уберает растояние между линиями в таблице, делая линии одинарными | а не двойными ||</p>
+		
+	<p class="headOfTitle">Оформление форм, с помощью CSS</p>
+		<p>ключевое слово в html-файле <span class="comment">for="name0001"</span> относится к <span class="comment">id="name0001"</span> Пример:</p>	
+		<p><span class="comment">&#60;label for="name0001"&#62;_______&#60;/label&#62;</span></p>
+		<p><span class="comment">&#60;input type="text" name="__" id="name0001"&#62;______&#60;/label&#62;</span></p>		
+		<p>Пример для рамок по тегу fieldset:</p>
+		<fieldset>
+			<legend>Легенда</legend>
+				<p class="comment">fieldset {</p>
+				<p class="comment">padding:10px;</p>
+				<p class="comment">margin:10px;</p>
+				<p class="comment">border:5px solid #FF0000;</p>
+				<p class="comment">background-color:#FFFF33;</p>
+				<p class="comment">}</p>
+		</fieldset>
+		<p>Одному объекту можно дать два класса через пробел, пример:</p>
+		<p><span class="comment">&#60;p class="nameOfclass01 nameOfclass02"&#62;</span></p>
+		<p class="primer">Пример input'ов:</p>
+		<p><label><span class="comment">input:focus</span> в CSS наследует свойства из input и является как дополнение <input type="text" class="input"></label></p>
+		<img src="_img/form_css.jpg">
+		<p>В теге textarea тоже есть focus. В тестовых областях (textarea, input) font может не наследоваться от свойств body - их нужно прописывать дополнительно.</p>
+		<p>Для интернет-эксплорера для нестандартных input, нужно дополнительно в CSS прописать: <span class="comment">line-height:27px;</span>, иначе текст будет не по центру.</p>		
+		<p class="primer cursor">Пример изменения курсора, при наведениии мыши:</p>
+		<p class="comment cursor">.cursor {</p>
+		<p class="comment cursor">cursor:crosshair;</p>
+		<p class="comment cursor">}</p>
+		<iframe width="420" height="315" src="https://www.youtube.com/embed/T6HWtzyMTfk" frameborder="0" allowfullscreen></iframe>
+		<iframe width="420" height="315" src="https://www.youtube.com/embed/eozmdD40Ido" frameborder="0" allowfullscreen></iframe>
+		
+	<p class="headOfTitle">Свойство обтекания float</p>		
+		<div id="d_red">
+			div1 id="d_red"
+			<div class="comment">
+				<p>#d_red, #d_green, #d_blue, #d_yellow, #d_white {</p>
+				<p>border:3px solid #000000;</p>
+				<p>padding-left: 20px;</p>
+				<p>}</p>
+				<p>#d_red {</p>
+				<p>margin:20px 20px 0 20px;</p>
+				<p>background-color:#FF0000;</p>
+				<p>}</p>
+			</div>
+		</div>
+		<div id="d_green">
+			div2 id="d_green"
+			<div class="comment">
+				<p>#d_green {</p>
+				<p>width:250px;</p>
+				<p>margin:20px 20px 20px 20px;</p>
+				<p>background-color:#00CC33;</p>
+				<p>float:left;</p>
+				<p>}</p>
+			</div>
+		</div>
+		<div id="d_blue">
+			div3 id="d_blue"
+			<div class="comment">
+				<p>#d_blue {</p>
+				<p>width:250px;</p>
+				<p>margin:20px 20px 20px 20px;</p>
+				<p>background-color:#00FFFF;</p>
+				<p>float:right;</p>
+				<p>}</p>
+			</div>			
+		</div>		
+		<div id="d_yellow">
+			div4 id="d_yellow"
+			<div class="comment">			
+				<p>#d_yellow {</p>
+				<p>width: 300px;</p>
+				<p>margin:20px auto 20px auto;</p>
+				<p>background-color:#FFFF00;</p>
+				<p>float:none;</p>
+				<p>}</p>
+			</div>
+		</div>
+		<div id="d_white">
+			div5 id="d_white"
+			<div class="comment">
+				<p>#d_white {</p>
+				<p>margin:20px 20px 20px 20px;</p>
+				<p>float:none;</p>
+				<p>}</p>
+			</div>			
+		</div>		
+		<p>В CSS <span class="comment">clear: both | left | right ;</span> - очистка обтекания. (В html-файле, обычно создается пустой тег div в котором прописывается этот класс с clear)</p>
+		<p class="videokurs">ВИДЕО: <a href="https://www.youtube.com/embed/XWjAcqoIOFc" title="Курс CSS - Урок №30. Свойство FLOAT. Введение. (Евгений Попов)" target="_blank">Курс CSS - Урок №30. Свойство FLOAT. Введение. (Евгений Попов)</a></p>
+		<p class="videokurs">ВИДЕО: <a href="https://www.youtube.com/embed/pWgfXeeHayk" title="Курс CSS - Урок №31. Создание каркаса на основе Float. (Евгений Попов)" target="_blank">Курс CSS - Урок №31. Создание каркаса на основе Float. (Евгений Попов)</a></p>
+		<p class="videokurs">ВИДЕО: <a href="https://www.youtube.com/embed/TxWjDtlmUbg" title="Курс CSS - Урок №32. (Евгений Попов)" target="_blank">Курс CSS - Урок №32. (Евгений Попов)</a></p>
+		
+	<p class="headOfTitle">Колонки одной высоты</p>
+	<p>1. Подключение скриптов в области head в html-файле:</p>
+		<div class="comment block">
+			<p>&#60;head&#62;</p>
+			<p>&#60;script src="_js/equalHeight.js" type="text/javascript"&#62; &#60;/script&#62;</p>
+			<p>&#60;script src="_js/jquery-1.5.min.js" type="text/javascript"&#62; &#60;/script&#62;</p>
+			<p>&#60;/head&#62;</p>
+		</div> <!-- class="comment block" Колонки одной высоты -->
+	<p>2. В файле equalHeight.js в строке setEqualHeight($("#_____,#______")); прописать id нужных блоков:</p>
+		<div class="comment block">
+			<p>$(document).ready(function() {</p>
+			<p>function setEqualHeight(columns)</p>
+			<p>{</p>
+			<p>var tallestcolumn = 0;</p>
+			<p>columns.each(</p>
+			<p>function() {</p>
+			<p>currentHeight = $(this).height();</p>
+			<p>if(currentHeight > tallestcolumn) {</p>
+			<p>tallestcolumn  = currentHeight;</p>
+			<p>} } );</p>
+			<p>columns.height(tallestcolumn);</p>
+			<p>}</p>
+			<p>setEqualHeight($("#d_green,#d_yellow,#d_blue"));</p>
+			<p>});</p>
+		</div> <!-- class="comment block" Колонки одной высоты-->
+		<div id="wwww">Дополнительные материалы и ресурсы: 
+			<p><a href="http://chikuyonok.ru/2009/06/float-columns/" title="chikuyonok.ru" target="_blank">Две float-колонки одинаковой высоты</a></p>
+			<p><a href="http://www.getincss.ru/2009/07/11/4-sposoba-kak-sozdat-bloki-kolonki-odinakovoj-vysoty/" title="Блог для вебмастеров" target="_blank">4 способа как создать блоки-колонки одинаковой высоты</a></p>
+			<p><a href="http://dimox.name/3-column-css-layout-right-sidebars/" title="http://dimox.name" target="_blank">Трехколоночный макет на CSS с одинаковой высотой колонок</a></p>
+		</div> <!-- class="wwww" -->
+		
+		<p class="videokurs">ВИДЕО: <a href="https://www.youtube.com/watch?v=1la4kn8GTWc" title="Курс CSS - Урок №33. Колонки одной высоты. (Евгений Попов)" target="_blank">Курс CSS - Урок №33. Колонки одной высоты. (Евгений Попов)</a></p>
+
+	<p class="headOfTitle">Позиционирование</p>
+		<p><strong>Абсолютное позиционирование</strong> <span class="comment">position:absolute;</span> - позиционирование относительно окна браузера. Координаты задаются с помощью <span class="comment">top:26px; bottom:26px; right:26px; left:26px;</span>. Если блок с абсолютным позиционированием поместить в другой блок, который тоже имеет абсолютное позиционирование - то он уже будет позиционироваться относительно родительского блока, а не браузера!</p>
+		<p><strong>Относительное позиционирование</strong> <span class="comment">position:relative;</span> относительно позиции, где он стоит. Блок с relative как бы преподнимается над остальным контентом, но его место другие блоки не занимают. Пример:</p>
+			<div id="d_relative" class="comment">
+				<div id="d_absolute">
+					<p>#d_absolute {</p>
+					<p>position:absolute;</p>
+					<p>background-color:#FFFF99;</p>
+					<p>left:200px;</p>
+					<p>top:-50px;</p>
+					<p>width:100px;</p>
+					<p>height:100px;</p>
+					<p>border:2px dotted #000000;</p>
+					<p>padding:20px 10px;</p>
+					<p>}</p>
+				</div>
+				<p>#d_relative {</p>
+				<p>position:relative;</p>
+				<p>background-color:#CC6600;</p>
+				<p>width:500px;</p>
+				<p>height:250px;</p>
+				<p>border:2px dotted #000000;</p>
+				<p>margin:75px 10px 75px 10px;</p>
+				<p>padding:20px 10px;</p>
+				<p>}</p>
+			</div>
+		<p>У родительского блока #d_relative - <span class="comment">position:relative;</span> у блока #d_absolute - <span class="comment">position:absolute;</span></p>
+		<p>Преимущество у relative перед absolute в том, что при смене размеров разрешения браузера, - блок не съедит относительно своего позиционирования</p>
+		<p><strong>Фиксированное позиционирование</strong> <span class="comment">position:fixed;</span> относительно экрана браузера всегда!!! даже если есть вложенные блоки.  Пример:</p>
+			<div class="comment">
+				<p>#d_fixed {</p>
+				<p>position:fixed;</p>
+				<p>left:0px;</p>
+				<p>top:50px;</p>
+				<p>}</p>
+			</div>
+		<p class="videokurs">ВИДЕО: <a href="https://www.youtube.com/watch?v=sEFtn45ML90" title="Курс CSS - Урок №34. Позиционирование. Введение. (Евгений Попов)" target="_blank">Курс CSS - Урок №34. Позиционирование. Введение. (Евгений Попов)</a></p>
+		<p class="videokurs">ВИДЕО: <a href="https://www.youtube.com/watch?v=Bfk7WFVUl2k" title="Курс CSS - Урок №35. Абсолютное позиционирование. (Евгений Попов)" target="_blank">Курс CSS - Урок №35. Абсолютное позиционирование. (Евгений Попов)</a></p>
+		<p class="videokurs">ВИДЕО: <a href="https://www.youtube.com/watch?v=EUKIpVQg6GI" title="Курс CSS - Урок №36. Относительное позиционирование. (Евгений Попов)" target="_blank">Курс CSS - Урок №36. Относительное позиционирование. (Евгений Попов)</a></p>
+		<p class="videokurs">ВИДЕО: <a href="https://www.youtube.com/watch?v=DsH4j5caKEw" title="Курс CSS - Урок №37. Фиксированное позиционирование. (Евгений Попов)" target="_blank">Курс CSS - Урок №37. Фиксированное позиционирование. (Евгений Попов)</a></p>
+		<p class="wwww">ВАЖНО: position и float использовать ОДНОВРЕМЕННО НЕЛЬЗЯ !!!</p>
+
+	<p class="headOfTitle">Z-Индексы</p>
+		<div id="zero" class="comment">
+			<div id="z0001">
+				<p>#z0001 {</p>
+				<p>z-index:1;</p>
+				<p>background-color:#0000FF;</p>
+				<p>}</p>
+			</div>
+			<div id="z0002">
+				<p>#z0002 {</p>
+				<p>z-index:2;</p>
+				<p>top:100px;</p>
+				<p>left:50px;</p>
+				<p>background-color:#FFFF00;</p>
+				<p>}</p>
+			</div>
+			<div id="z0003">
+				<p>#z0003 {</p>
+				<p>z-index:3;</p>
+				<p>top:230px;</p>
+				<p>left:100px;</p>
+				<p>background-color:#FFFFFF;</p>
+				<p>}</p>
+			</div>
+			<div id="z0004">
+				<p>#z0004 {</p>
+				<p>z-index:4;</p>
+				<p>top:370px;</p>
+				<p>left:150px;</p>
+				<p>background-color:#FF33FF;</p>
+				<p>}</p>
+			</div>
+			<div id="z0005">
+				<p>#z0005 {</p>
+				<p>z-index:3;</p>
+				<p>top:250px;</p>
+				<p>left:340px;</p>
+				<p>background-color:#339966;</p>
+				<p>text-align:right;</p>
+				<p>}</p>
+			</div>
+			<div id="z0006">
+				<p>#z0006 {</p>
+				<p>z-index:2;</p>
+				<p>top:100px;</p>
+				<p>left:475px;</p>
+				<p>background-color:#FF6600;</p>
+				<p>text-align:right;</p>
+				<p>}</p>
+			</div>
+			<div id="z0007">
+				<p>#z0007 {</p>
+				<p>z-index:1;</p>
+				<p>left:550px;</p>
+				<p>top:-50px;</p>
+				<p>background-color:#00CC99;</p>
+				<p>text-align:right;</p>
+				<p>}</p>
+			</div>
+		</div>		
+		<p class="videokurs">ВИДЕО: <a href="https://www.youtube.com/watch?v=IEF4Zwc7FoM" title="Курс CSS - Урок №38. Z-индексы. (Евгений Попов)" target="_blank">Курс CSS - Урок №38. Z-индексы. (Евгений Попов)</a></p>	
+
+	<p class="headOfTitle">Видимость элементов</p>
+		<p><span class="comment">visibility: visible | hidden | collapse | inherit; </span> Предназначен для отображения или скрытия элемента, включая рамку вокруг него и фон. При скрытии элемента, хотя он и становится не виден, место, которое элемент занимает, остается за ним. Если предполагается вывод разных элементов в одно и то же место экрана, для обхода этой особенности следует использовать абсолютное позиционирование или воспользоваться свойством display.</p>
+		<p><span class="comment">visible</span> - Отображает элемент как видимый. <span class="comment">hidden</span> - Элемент становится невидимым или правильней сказать, полностью прозрачным, поскольку он продолжает участвовать в форматировании страницы.
+			<span class="comment">collapse</span> - Если это значение применяется не к строкам или колонкам таблицы, то результат его использования будет таким же, как hidden. В случае использования collapse для содержимого ячеек таблиц, то они реагируют, словно к ним было добавлено display: none. Иными словами, заданные строки и колонки убираются, а таблица перестраивается по новой. Это значение не поддерживается браузером Internet Explorer.
+			<span class="comment">inherit</span> - Наследует значение родителя.</p>
+		<p><span class="comment">display: block | inline | inline-block | inline-table | list-item | none | run-in | table | table-caption | table-cell | table-column-group | table-column | table-footer-group | table-header-group | table-row | table-row-group</span> Список возможных значений этого свойства, понимаемый разными браузерами очень короткий — block, inline, list-item и none. Все остальные допустимые значения поддерживаются браузерами выборочно. В табл. 1 приведены некоторые популярные браузеры и их поддержка различных значений.</p>
+		<p class="videokurs">ВИДЕО: <a href="https://www.youtube.com/watch?v=daUOx-xkmAE" title="Курс CSS - Урок №39. Видимость элементов. (Евгений Попов)" target="_blank">Курс CSS - Урок №39. Видимость элементов. (Евгений Попов)</a></p>			
+		
+	<p class="headOfTitle">Максимальная и минимальная ширина сайта</p>
+		<p>Если не задано жостко ширана блоков/обёртки <span class="comment">width</span> то при уменьшении окна - дизайн сайта будет сыпаться, а при увелечении разтягиваться до неудобного чтения контента</p>
+		<p><span class="comment"><a href="http://htmlbook.ru/css/min-width" target="_blank">min-width</a></span> - Устанавливает минимальную ширину элемента. Если окно браузера по ширине становится меньше заданной минимальной ширины элемента, то ширина элемента остается неизменной, а в окне появляется горизонтальная полоса прокрутки.</p>
+		<p><span class="comment"><a href="http://htmlbook.ru/css/max-width" target="_blank">max-width</a></span> - Устанавливает максимальную ширину элемента. Значение ширины элемента будет вычисляться в зависимости от значений установленных свойств width, max-width и min-width.</p>
+		<p><span class="comment"><a href="http://htmlbook.ru/css/min-height" target="_blank">min-height</a> <a href="http://htmlbook.ru/css/max-height" target="_blank">max-height</a></span> - Устанавливает минимальную и максимальную высоту элемента. Значение высоты элемента будет вычисляться в зависимости от значений установленных свойств height, max-height и min-height.</p>		
+		<p>*** Если не задана <span class="comment">width</span>, а только <span class="comment">min-width</span> то блок растягивается на всю ширину окна, но при уменьшении появляются полосы прокрутки и дизайн не сыпется.</p>
+		<p class="videokurs">ВИДЕО: <a href="https://www.youtube.com/watch?v=MK5JHa-EZdE" title="Курс CSS - Урок №40. Максимальная и минимальная ширина сайта. (Евгений Попов)" target="_blank">Курс CSS - Урок №40. Максимальная и минимальная ширина сайта. (Евгений Попов)</a></p>
+		
+	<p class="headOfTitle">Варианты решения проблем с Интернет Эксплорером</p>
+		<p class="videokurs">ВИДЕО: <a href="https://www.youtube.com/watch?v=p7wsg8IrW0w" title="Курс CSS - Урок №42. Решение проблем IE6. (Евгений Попов)" target="_blank">Курс CSS - Урок №42. Решение проблем IE6. (Евгений Попов)</a></p>	
+
+	<p class="headOfTitle">Варианты подключения CSS-сценария</p>
+                <p>Варинат № 1. Один CSS-файл в области &#60head&#62 html-файла</p>
+                <div class="comment block">
+                    <p>&#60head&#62</p>
+                    <p>&#60link href="folder/style.css" type="text/css" rel="stylesheet"&#62</p>
+                    <p>&#60/head&#62</p>
+                </div>	
+                <p>Варинат № 2. Расписать CSS-сценарий в области &#60head&#62 или любой другой области кода html-файла</p>
+                <div class="comment block">
+                    <p>&#60head&#62</p>
+                    <p>&#60style&#62</p>
+                    <p>body {</p>
+                    <p>background-color: #40E7FA;</p>
+                    <p>}</p>
+                    <p>&#60/style&#62</p>
+                    <p>&#60/head&#62</p>
+                </div>
+                <p>Варинат № 3. В CSS-файле подключить другие CSS-файлы</p>
+                <div class="comment block">
+                    <p>/* CSS Document */</p>
+                    <p>@import url("../file.css");</p>
+                    <p>body {</p>
+                    <p>}</p>
+                    <p>.wrapper {</p>
+                    <p>}</p>
+                </div>	
+                <p>Варинат № 4. Внутри одного из тегов html-файла</p>
+                <div class="comment block">
+                    <p>&#60p style="color:#9932CC; font-family:"Times New Roman", Times, serif;"&#62 ***текст*** &#60/p&#62</p>
+                </div>
+		<p class="videokurs">ВИДЕО: <a href="https://www.youtube.com/watch?v=3TkmfuRUS2E" title="Курс CSS - Урок №43. Два способа подключения стилей. (Евгений Попов)" target="_blank">Курс CSS - Урок №43. Два способа подключения стилей. (Евгений Попов)</a></p>
+        <!-- Варианты подключения CSS-сценария -->
+        <!-- Варианты подключения CSS-сценария -->
+        <!-- Варианты подключения CSS-сценария -->
+
+	<p class="headOfTitle">Варианты курсора мыши</p>
+        <div class="comment">
+            <div style="cursor: alias">cursor:alias;</div>
+            <div style="cursor:all-scroll">cursor:all-scroll;</div>
+            <div style="cursor:auto">cursor:auto;</div>
+            <div style="cursor:cell">cursor:cell;</div>
+            <div style="cursor:col-resize">cursor:col-resize;</div>
+            <div style="cursor:context-menu">cursor:context-menu;</div>
+            <div style="cursor:copy">cursor:copy;</div>
+            <div style="cursor:crosshair">cursor:crosshair;</div>
+            <div style="cursor:default">cursor:default;</div>
+            <div style="cursor:e-resize">cursor:e-resize;</div>
+            <div style="cursor:ew-resize">cursor:ew-resize;</div>
+            <div style="cursor:help">cursor:help;</div>
+            <div style="cursor:inherit">cursor:inherit;</div>
+             cursor:initial;
+        cursor:move;
+        cursor:n-resize;
+        cursor:ne-resize;
+        cursor:nesw-resize;
+        cursor:no-drop;
+        cursor:none;
+        cursor:not-allowed;
+        cursor:ns-resize;
+        cursor:nw-resize;
+        cursor:nwse-resize;
+        cursor:pointer;
+        cursor:progress;
+        cursor:row-resize;
+        cursor:s-resize;
+        cursor:se-resize;
+        cursor:sw-resize;
+        cursor:text;
+        cursor:url ;
+        cursor:vertical-text;
+        cursor:w-resize;
+        cursor:wait;
+        </div>        
+       
+        
+        <!-- Варианты курсора мыши -->
+        <!-- Варианты курсора мыши -->
+        <!-- Варианты курсора мыши -->
+                
+                
+                <p>---------------------------------------</p>
+		<p>***<span class="comment">inherit</span> - позволяет наследовать свойство от родителя, для ненаследуемых свойств (например, <span class="comment">padding</span>)</p>
+                                
+	</div>  <!-- class="wrapper" -->
+</body>
+</html>

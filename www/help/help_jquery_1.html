@@ -1,0 +1,449 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="_css/style.css" rel="stylesheet" type="text/css">
+        <script src="_js/jquery-1.5.min.js" type="text/javascript"></script>
+        <script src="_js/JQuerySimple1.js" type="text/javascript"></script>
+        <title>Библиотека jQuery</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <p class="comment">&#60script src="js/jquery-1.11.3.js" type="text/javascript"&#62&#60/script&#62</p>
+        <p><a href="http://jquery.com/download/" target="_blank">Загрузить последнюю версию библиотеки JQuery</a></p>
+        <p>Вызов метода JQuery: <br /><span class="comment">jquery( );</span> или её сокращённый вариант: <span class="comment">$( );</span></p>
+        <p>Запись <span class="comment">var b = $('#divName p');</span> - создает JQuery объект.</p>
+        <p>Понятие метода цепных функций: <span class="comment">$ ( '....' ).hide(3000).show(3000).width(815).height(130).text('Новый текст');</span> - когда к объекту можно прописать сразу несколько функций.</p>
+        
+        <p class="headOfTitle">Выборка (набор) JQuery</p>
+                <p>01.) <span class="comment">$('p');</span> - выборка по названию тэга &#60p&#62.</p>
+                <p>02.) <span class="comment">$('#nameId');</span> - выборка по идентификатору элемента. &#60p id = "nameId"&#62.</p>
+                <p>03.) <span class="comment">$('.nameClass');</span> - выборка по названию класса &#60p class = "nameClass"&#62.</p>
+                <p>04.) <span class="comment">$('#nameId p'); $('p strong');</span> - выборка по вложенным селекторам.</p>
+                <p>05.) <span class="comment">$('#nameId + p');</span> - выборка по следующему тэгу.</p>
+                <p>06.) <span class="comment">$('#nameId > p');</span> - выбор дочерних тэгов.</p>
+                <img src="_img/inDaughter.jpg" alt=""/>
+                <p>07.) <span class="comment">$('img[width = 200]');</span> - выборка по атрибуту-свойству тега.</p>
+                    <img src="_img/DOMv.jpg" alt=""/>
+                <p>08.) <span class="comment">$('a[href ^= http]');</span> - выборка по тому, с чего должно начинатся значение атрибута-свойства тега.</p>
+                <p>09.) <span class="comment">$('img[src $= .jpg]');</span> - выборка по тому, с чем должно заканчиваться значение атрибута-свойства тега.</p>
+                <p>10.) <span class="comment">$('img[src *= kiranatos]');</span> - выборка по частице элемента, который может быть в любом месте в значении атрибута-свойства тега.</p>
+                <p>11.) <span class="comment">$('#divName a[href^=F:\Folder\]'); $('#divName img[title=названиеРисунка]');</span> - комбинированная выборка.</p>
+                <p>---------------------------------------------------Фильтрация выборок</p>
+                <p>11.) <span class="comment">$('#divName tr:even');</span> - выборка по чётным элементам (выбирает чёетные строки &#60tr&#62 таблицы id="divName" - отсчёт строк идёт с НУЛЯ!!!).</p>
+                <p>12.) <span class="comment">$('#divName tr:odd');</span> - выборка по нечётным элементам (выбирает чёетные строки &#60tr&#62 таблицы id="divName" - отсчёт строк идёт с НУЛЯ!!!).</p>
+                <p>13.) <span class="comment">$('#divName001:not(#divName001 p)');</span> - выборка всех тегов, кроме тех, что в not. Пример: <span class="comment">$('img:not(#divName img)');</span> - Выбраны все картинки на странице, кроме тех картинок, что находятся в блоке div с идентификатором id="divName"</p>
+                <p>14.) <span class="comment">$('p:has(strong)');</span> - выборка по внутреннему содержанию других тегов. Пример: <span class="comment">$('div:has(fieldset)');</span> - Выбраны все блоки div в которых есть тег &#60fieldset&#62.</p>
+                <p>15.) <span class="comment">$('p:contains(киранатос)');</span> - выборка абзацев в тексте которых встречается слово "киранатос".</p>
+                <p>16.) <span class="comment">$('#divName img:first');</span> - выбран первый элемент (картинка &#60img&#62) в блоке div с идентификатором id="divName".</p>
+                <p>17.) <span class="comment">$('#divName img:last');</span> - выбран последний элемент (картинка &#60img&#62) в блоке div с идентификатором id="divName".</p>
+                <p>18.) <span class="comment">$('div:hidden');</span> - выборка всех блоков &#60div&#62...&#60/div&#62, которые были скрыты в окне браузера.</p>
+                <p>19.) <span class="comment">$('div:visibility');</span> - выборка всех блоков &#60div&#62...&#60/div&#62, которые отображаются  в окне браузера.</p>
+                <p>---------------------------------------------------</p>
+                <p>20.) <span class="comment">$('img[width=200], a[href*=documents]');</span> - выборка разнотипных элементов делается через запьятую.</p>
+                <p>21.) <span class="comment">$('img[alt]');</span> - отобрать элемент по наличию атрибута, т.е. атрибут alt просто должен быть, независимо от того, чему он равен.</p>                
+        <!-- Выборка JQuery -->
+        <!-- Выборка JQuery -->
+        <!-- Выборка JQuery -->
+        
+        <p class="headOfTitle">Работа с текстом</p>
+        <p>Метод JQuery <span class="comment">var t = $('#divName').text;</span> - вернёт текст в переменную t. (Вывести его например, можно с помощью модального окна alert(t);)</p>
+        <p><span class="comment">var t = $( ' #divName ' ).text( ' Текст, измененный с помощью JQuery ' );</span> - Изменение текста.</p>
+        <p>для изменения текста используется метод .text, для изм кода - .html</p>        
+        <p class="headOfTitle">Изменение html-кода документа</p>
+        <p><span class="comment">$('#divName').html();</span> - Для получение куска кода по id тега объекта.<span class="primer">Пример: <a href="help_jquery_sample_1.html" target="_blank">Cвойство .html()</a></span></p>
+        <p>Чтобы изменить код, нужно вставить в скобки новый текст:</p>
+        <div class="comment">
+            <p>$ ( ' #divName ' ).html( ' &#60p&#62текст&#60/p&#62...&#60img&#62...&#60/img&#62 ' );</p>
+        </div>
+        <p class="primer">Пример: <a href="help_jquery_sample_2.html" target="_blank">Изменение текста с помощью свойства .html()</a></p>
+        <!-- Работа с текстом -->
+        <!-- Работа с текстом -->
+        <!-- Работа с текстом -->
+        
+        <p class="headOfTitle">Исчезновение объектов</p>
+        <p><span class="comment">$('img[src*=anime]').hide(3000);</span> - функция b1.hide(time,[callback]); прячет объект за 3 секунды.</p>
+        <p><span class="comment">$('img[src*=anime]').show(3000);</span> - функция b1.show(time,[callback]); показывает спрятанный объект за 3 секунды.</p>        
+        <p><span class="comment">$('img[src*=anime]').fadeOut(3000);</span> - функция b1.fadeOut(time,[callback]); прячет объект за 3 секунды.</p>
+        <p><span class="comment">$('img[src*=anime]').fadeIn(3000);</span> - функция b1.fadeIn(time,[callback]); показывает спрятанный объект за 3 секунды.</p>
+        <p><span class="comment">$('img[src*=anime]').fadeTo(3000, 0.5);</span> - функция b1.fadeTo(time,opacity,[callback]); делает объект прозрачным за 3 секунды на величину 0.5.</p>
+        <p><span class="comment">$('img[src*=anime]').slideUp(3000);</span> - функция b1.slideUp(time,[callback]); объект уезжает вверх за 3 секунды.</p>
+        <p><span class="comment">$('img[src*=anime]').slideDown(3000);</span> - функция b1.slideDown(time,[callback]); объект приезжает сверху за 3 секунды.</p>
+        <p class="primer">Пример: <a href="help_jquery_demo.html" target="_blank">Демонстрационный файл</a></p>
+        <p style="font-family:Impact">*Примечание: time - милисекунды на выполнение, opacity - прозрачность от 0 до 1, [callback] - не объязательный параметр, указывает на следующее действие, которое нужно выполнить.</p>
+        <div class="block" style="background-color: #FFEFD5">
+            <p><strong>Пример задачи:</strong> Написать функцию, которая получает 2 параметра - id элемента, который должен исчезнуть со страницы и время его исчезнования. При вызове функции указанный элемент должен плавно исчезать (fadeOut) за указанное  время. При этом, второй параметр вам надо проверить на удовлетворение 2-м условиям. 1. Параметр должен быть числом. 2. Число должно быть в диапазоне от 500 до 10000. Если число за диапазоном, то вы должны прервать выполнение функции и вернуть false.</p>
+            <img src="_img/ex_1.jpg" alt=""/>
+        </div>
+        <!-- Исчезновение объектов -->
+        <!-- Исчезновение объектов -->
+        <!-- Исчезновение объектов -->
+        
+        <p class="headOfTitle">Изменение ширины и высоты.</p>
+        <p>в HTML-файле:</p>
+        <p class="comment">&#60img src="_img/anime.jpg" alt="" width="500" height="500" /&#62</p>
+        <p>в CSS-файле:</p>
+        <div class="comment">
+            <p>#nameId {</p>
+            <p>width:250px;</p>
+            <p>height:200px;</p>
+            <p>}</p>
+        </div>
+        <p>в JS-файле:</p>
+        <p class="comment">var b_resolution = $('#divName').height(130).width(815);</p>
+        <p class="primer">Пример: <a href="help_jquery_sample_3.html" target="_blank">Изменение размеров</a></p>
+        <div class="block" style="background-color: #FFEFD5">
+            <p><strong>Пример задачи:</strong> Нужно написать функцию, которая будет вычислять размеры элемента. Идентификатор элемента, размеры которого надо вычислить, передаются в функцию в качестве параметра. Результаты функция выводит в специальный блок div с id="forresults", который находится после таблицы по продаже б/у мотоциклов нашего сайта.</p>
+            <div class="comment">
+                <p>$(document).ready(function(){</p>
+                <p>function whCalc(element) {</p>
+                <p>var idFull = "#" + element;</p>
+                <p>var wElement = $(idFull).width();</p>
+                <p>var hElement = $(idFull).height();</p>
+                <p>$('#forresults').text(wElement + ' x ' + hElement);</p>
+                <p>} // конец function whCalc</p>
+                <p>whCalc('divName');</p>
+                <p>}); // конец ready</p>
+            </div>
+        </div>
+        <!-- Изменение ширины и высоты -->
+        <!-- Изменение ширины и высоты -->
+        <!-- Изменение ширины и высоты -->
+       
+        <p class="headOfTitle">Доступ к атрибутам.</p>
+        <p><span class="comment">var a = $('img[src*=anime]').attr('height');</span> - получение значения аттрибута height.</p>
+        <p><span class="comment">$('#divName').text("Высота: " + a);</span> - вывод в окно браузера.</p>
+        <p><span class="comment">$('img[src*=anime]').attr('height', 500);</span> - изменение значения аттрибута height. (В случае если у объекта вообще не было атрибута - он будет создан)</p>
+        <p><span class="comment">$('#divName').removeAttr('title');</span> - удаление аттрибута height.</p>
+        <p class="primer">Пример: <a href="help_jquery_sample_4.html" target="_blank">Работа с атрибутами</a></p>
+        <!-- Доступ к атрибутам -->
+        <!-- Доступ к атрибутам -->
+        <!-- Доступ к атрибутам -->
+        
+        <p class="headOfTitle">Работа с классами</p>
+        <p><span class="comment">$('#divName').addClass('nameNewClass');</span> - добавить новый класс nameNewClass к объекту #divName.</p>
+        <p><span class="comment">$('#divName').removeClass('nameClass');</span> - удалить класс nameClass у объекта #divName.</p>
+        <!-- Работа с классами -->
+        <!-- Работа с классами -->
+        <!-- Работа с классами -->
+        
+        <p class="headOfTitle">Метод .css()</p>
+        <p><span class="comment">var t = $('#divName').css('margin-bottom');</span> - получить значение css-свойства margin-bottom.</p>
+        <p><span class="comment">$('#divName').css('color','#3F4078');</span> - установить новое значение для css-свойства color.</p>
+        <div class="block">
+            <p>Два возможных варианта установки занчений css-свойств:</p>
+            <p>1. <span class="comment">$ ( ' #divName ' ).css( 'color','#3F4078' ).css( 'font-size' , '19px' );</span></p>
+            <p>2. <strong>Литерал объекта:</strong></p>
+            <div class="comment">
+                <p>$ ( ' #divName ' ).css ( {</p>
+                <p>'color' : '#3F4078',</p>
+                <p>'font-size' : '19px'</p>
+                <p>} ) ;</p>
+            </div>
+        </div>
+        <div class="block" style="background-color: #FFEFD5">
+            <p><strong>Пример задачи:</strong> На странице есть элемент span с классом "pq", который находится внутри заголовка h3 с id="my_h3". Ваша задача: удалить у этого элемента  класс "pq" и добавить ему 3 css свойства за раз: <span class="comment">border: 1px solid #cc0000 ; padding: 5px ; background-color: #f6f6f6</span>.</p>
+            <img src="_img/ex_2.jpg" alt=""/>
+        </div>
+        <!-- Метод .css() -->
+        <!-- Метод .css() -->
+        <!-- Метод .css() -->
+        
+        <p class="headOfTitle">Метод .animate()</p>
+        <p><span class="comment">$( '#divName' ).animate( { 'width':'450px' }, 4000);</span> - Метод делает постепенное уменьшение указанного свойства, за 4 секунды.</p>
+        <p><span class="comment">$( '#divName' ).animate( { 'color':'#3F4078' }, 4000, function() { alert( ' Готово ' ) ; } ) ;</span> - Метод изменяет цвет за 4 секунды и вызывает функцию (название функции давать не нужно, скобки оставить - она анонимная).</p>
+        <div class="block comment">
+            <p>$( ' #divName ' ).animate( {</p>            
+            <p style="text-indent: 40px">'color':'#3F4078'</p>
+            <p>} , 4000 ,  function ( ) {</p>
+            <p style="text-indent: 40px">alert( ' Готово ' );</p>
+            <p>} ) ;</p>
+        </div>
+        <p><span class="comment">$('#divName').animate({'color':'#3F4078'},4000, kiranatos);</span> - Метод изменяет цвет за 4 секунды и вызывает функцию kiranatos (скобки не нужны).</p>
+        <p>Для свойств, которые пишутся через дефис используется верблюжа запись:</p>
+        <p>1) <span class="comment">margin-top</span> - <span class="comment">$('#divName').animate({'marginTop':'450px'},4000);</span>.</p>
+        <p>2) <span class="comment">padding-left</span> - <span class="comment">$('#divName').animate({'paddingLeft':'450px'},4000);</span>.</p>
+        <!-- Метод .animate() -->
+        <!-- Метод .animate() -->
+        <!-- Метод .animate() -->
+        
+        <p class="headOfTitle">Вставка с помощью .before() .after() .prepend() и .append()</p>
+        <div class="comment">
+            <p>$('#textSimple').before('&#60p&#62Данный абзац вставлен с помощью метода before()&#60/p&#62');</p>
+            <p>$('#textSimple').after('&#60p&#62Данный абзац вставлен с помощью метода after()&#60/p&#62');</p>
+            <p>$('#textSimple').prepend('&#60p&#62Данный абзац вставлен с помощью метода prepend()&#60/p&#62');</p>
+            <p>$('#textSimple').append('&#60p&#62Данный абзац вставлен с помощью метода append()&#60/p&#62');</p>
+        </div>
+        <p>Пример:</p>
+        <p id="textSimple" class="block primer">Абзац с id="textSimple"</p>
+        <!-- Вставка с помощью .before() .after() .prepend() и .append() -->
+        <!-- Вставка с помощью .before() .after() .prepend() и .append() -->
+        <!-- Вставка с помощью .before() .after() .prepend() и .append() -->
+        
+        <p class="headOfTitle">Автоматическая функция jQuery.each (цикл для каждого объекта)</p>
+        <div class="comment">
+            <p>$ ( ' img ' ).each( function() {</p>
+            <p>...</p>
+            <p>} ) ;</p>
+        </div>
+        <p>Выполняет функцию для каждого элемента набора. Это означает, что каждый раз, когда выполняется указанная функция (а выполняется она один раз для каждого совпавшего элемента) ключевое слово ‘this’ указывает на конкретный элемент DOM. Помните, что слово ‘this’ НЕ указывает на объект jQuery. Кроме того, запущенная функция передает единственный аргумент, который показывает позицию элемента в составе набора совпавших элементов (integer, отсчет с 0).</p>
+        <p>Доп.информация: <a href="http://jquery.page2page.ru/index.php5/%D0%92%D1%8B%D0%B7%D0%BE%D0%B2_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8_%D0%B4%D0%BB%D1%8F_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_%D0%BD%D0%B0%D0%B1%D0%BE%D1%80%D0%B0" target="_blank">Вызов функции для элементов набора .each()</a></p>
+        <div class="block" style="background-color: #FFEFD5">
+            <p><strong>Пример задачи:</strong> Ваша задача перебрать все картинки страницы и добавить красную 1px рамку тем из них, у которых в атрибуте title встречается буква "т", а высота больше 50, но меньше 100.</p>
+            <img src="_img/ex_3.jpg" alt=""/>
+        </div>
+        <p>*** <span class="comment">$(this)</span> - указывает на данный объект.</p>
+        <!-- Автоматическая функция jQuery.each (цикл для каждого объекта) -->
+        <!-- Автоматическая функция jQuery.each (цикл для каждого объекта) -->
+        <!-- Автоматическая функция jQuery.each (цикл для каждого объекта) -->
+        
+        <p class="headOfTitle">Работа с объектом</p>
+        <p><span class="comment">var a = $('div').size();</span> - функция возвращает количество объктов выборки.</p>
+        <p><span class="comment">var a = $('div').get(N);</span> - функция возвращает javascript объкт под номером N из всей выборки.</p>
+        <p><span class="comment">var a = $('#divName').clone();</span> - функция дублирует объкт (создает клон объекта). Потом его можно вставить вот так: <span class="comment">$(#imgName).after(a);</span> .</p>
+        <p><span class="comment">var a = $('#divName').remove();</span> - функция удаляет объкт, но возвращает его копию в переменную (Вырезать<img src="_img/scissors.png" height="20px" width="20px" />). Если нужно, его потоми можно вставить вот так: <span class="comment">$(#imgName).after(a);</span></p>
+        <!-- Работа с объектом -->
+        <!-- Работа с объектом -->
+        <!-- Работа с объектом -->        
+        
+        <p class="headOfTitle">События отслеживаемые браузером</p>
+        <p>01. mouseover - наведение мыши на объект</p>
+        <p>02. mouseout - увод мыши с объекта</p>
+        <p>03. click - клик мишью по объекту</p>
+        <p>04. dblclick - двойной клик мишью по объекту</p>
+        <p>05. mousemove - переещение курсора мыши</p>
+        <p>06. mousedown - момент нажатия кнопки мыши</p>
+        <p>07. mouseup - момент отпускания кнопки мыши</p>
+        <p>08. submit - момент отправки формы обработчику</p>
+        <p>09. focus - момент получения фокуса объектом (работает и для ссылок)</p>
+        <p>10. blur - момент потери фокуса объектом (работает и для ссылок)</p>
+        <p>11. change - изменение объекта формы</p>
+        <p>12. reset - сброс формы</p>
+        <p>13. keypress - нажатие клавиши на клавиатуре</p>
+        <p>14. keydown - момент нажатия клавиши, до момента отпускания</p>
+        <p>15. keyup - момент отпускания клавиши</p>
+        <p>16. load - полная загрузка страницы</p>
+        <p>17. resize - изменение размеров окна браузера</p>
+        <p>18. scroll - прокрутка страницы</p>
+        <p>19. unload - уход со страницы</p>
+        <div class="block">
+            <p>Традиционная модель, которая применяется в javascript</p>
+            <div class="comment">
+                <p>var b = document.getElementById( ' divName ' );</p>
+                <p>function nameClick( ) {</p>
+                <p style="text-indent: 20px">alert( "Ширина: " + b.width );</p>
+                <p>}</p>
+            </div>
+            <p><span class="comment">b.onclick = nameClick;</span> - Функцию с именем nameClick приисваевают без скобок. В javascript к событиям добавляется префикс "on". Пример: <span class="comment">onmouseove, onmouseout</span></p>            
+        </div>
+        
+        <div class="block">
+            <p>Устаревший вариант, применяемый в html-файлах:</p>
+            <p class="comment">&#60img id="nameImg" <span style="color: #C71585">onclick="alert('Тест')"</span> src="F:\folder\...\"&#62</p>
+        </div>
+        
+        <div class="block">
+            <p>Обработка событий в JQuery. Примеры:</p>
+            <div class="comment">
+                <p>$( 'input[name="buttonEx"]' ).click( function( ) {</p>
+                <p style="text-indent: 20px">alert( ' Вы кликнули по кнопке ' );</p>
+                <p>} ) ;</p>
+            </div>            
+            <p><input type="button" name="buttonEx" value="Кнопка для демонстрации"></p>            
+            
+            <div class="comment">
+                <p>$(window).scroll( function( ) {</p>
+                <p style="text-indent: 20px">alert( ' Произошло событие прокрутки страницы ' );</p>
+                <p>} ) ;</p>
+            </div>
+            <p>ТУТ ДОЛЖНА БЫТЬ ДЕМОНСТРАЦИЯ ПРОКРУТКИ</p>
+            
+            <div class="comment">
+                <p>$('#divName1').click( function( ) {</p>
+                <p style="text-indent: 20px">var m = $(this).clone();</p>
+                <p style="text-indent: 20px">$('#divName2').append(m);</p>
+                <p>} ) ;</p>
+            </div>
+            <p>Демонстрационная картинка для клонирования (кликните по картинке) :</p>
+            <img src="_img/anime.jpg" id="divImg1" width="50px" height="50px" alt=""/>
+            <div class="block" id="divImg2"></div>
+        </div>
+        <div class="block" style="background-color: #FFEFD5">
+            <p><strong>Пример задачи:</strong>Напишите обработчик события, который делает следующее. При клике мышью на любом из названий мотоциклов в этом блоке:
+            <ol id="moto_models">
+                <li>Харлей Дэвидсон</li>
+                <li>Кроссовый мотоцикл</li>
+                <li>Гоночный мотоцикл</li>
+                <li>Концептуальный мотоцикл</li>
+            </ol> У Вас в таблице с id="moto_table" должна появляться новая строчка, в которой плавно появляется текст из элемента, по которому кликнули.</p>            
+            <div>
+                <p><strong>Варианты решения:</strong>Мой и Попова:</p>                
+                <div class="comment" style="border: 1px #C71585 solid">
+                    <p>$('ol li').each(function() {</p>
+                    <p style="text-indent: 20px">var a = $(this).text();</p>
+                    <p style="text-indent: 20px">$(this).click( function(){</p>
+                    <p style="text-indent: 40px">$('#moto_table tbody').append('&#60tr&#62&#60td&#62'+ a +'&#60/td&#62&#60td&#62&#60/td&#62&#60/tr&#62');</p>            
+                    <p style="text-indent: 40px">b = $('#moto_table tbody tr:last');</p>
+                    <p style="text-indent: 40px">b.hide();</p>
+                    <p style="text-indent: 40px">b.fadeIn(3000);</p>
+                    <p style="text-indent: 20px">})</p>
+                    <p>})</p>
+                </div>
+                <div style="border: 1px #C71585 solid"><img src="_img/ex_4.jpg" width="650px" height="200" alt=""/></div>
+            </div>
+        </div>
+        <div class="block" style="background-color: #FFEFD5">
+            <p><strong>Пример задачи JQUERY_6:</strong>Вам нужно написать обработчик события, который будет подсвечивать строку таблицы (id="moto_table"), на которую навели курсор мыши вот таким цветом: #1F233C, а текст будет делать белым.</p>
+            <div>
+                <p><strong>Варианты решения:</strong>Мой и Попова:</p>
+                <div style="border: 1px #C71585 solid; float:right"><img src="_img/ex_5.jpg" width="340px" height="330" alt=""/></div>
+                <div class="comment" style="border: 1px #C71585 solid">
+                    <p>var col, bcol;</p>
+                    <p>$('#moto_table tr').mouseover(function(){</p>
+                    <p style="text-indent: 20px">col = $(this).css('color');</p>
+                    <p style="text-indent: 20px">bcol = $(this).css('background-color');</p>
+                    <p style="text-indent: 20px">$(this).css({</p>
+                    <p style="text-indent: 40px">'color': '#FFFFFF',</p>
+                    <p style="text-indent: 40px">'background-color': '#1F233C'</p>
+                    <p style="text-indent: 20px">});</p>
+                    <p>})</p>
+                    <p>$('#moto_table tr').mouseout(function(){</p>
+                    <p style="text-indent: 20px">$(this).css({</p>
+                    <p style="text-indent: 40px">'color': col,</p>
+                    <p style="text-indent: 40px">'background-color': bcol</p>
+                    <p style="text-indent: 20px">});</p>
+                    <p>})</p>
+                </div>                
+            </div>
+        </div>
+        <!-- События отслеживаемые браузером -->
+        <!-- События отслеживаемые браузером -->
+        <!-- События отслеживаемые браузером -->
+        
+        <p class="headOfTitle">JQuery cобытия hover() и toggle()</p>
+        <p><span class="comment">$('#divName').hover( function(){} , function(){} );</span> - (смотри задачу JQUERY_6)Событие JQuery отвечающее за наведение и увод мыши с объекта. Первая скрытая функция выполняется при наведении мыши, второя функция при уходе мыши с объекта</p>
+        <p><span class="comment">$('#divName').toggle( function(){} , function(){} );</span> - Событие (Переключатель) JQuery отвечающее за первый и второй клик мышью. Первая скрытая функция выполняется при первом клике, второя функция при втором клике</p>
+        <div class="comment block">
+            <p>$('#formHide').toggle( function() {</p>
+            <p style="text-indent: 20px">$('#myForm').fadeOut(1000)</p>
+            <p style="text-indent: 20px">$(this).text('Развернуть форму')</p>
+            <p>} , function() {</p>
+            <p style="text-indent: 20px">$('#myForm').fadeIn(1000)</p>
+            <p style="text-indent: 20px">$(this).text('Свернуть форму')</p>
+            <p>} ) ;</p>
+        </div>
+        <div class="block" style="background-color: #FFEFD5">
+            <p><strong>Пример задачи JQUERY_7:</strong>1. С помощью события hover() и функции css() сделайте так, чтобы при наведении на кнопку "Отправить заявку", ее свойства менялись: а. Фоновый цвет должен меняться на #32375D. б. Цвет текста на белый. Когда же курсор мыши убирается с элемента, то все должно возвратиться на свои места.</p>
+            <p>2. С помощью toggle() сделайте так, чтобы при первом щелчке строка таблицы подсвечивалась, а при повторном принимала обычное положение (здесь уже css() использовать не обязательно, можете  использовать классы).</p>
+            <div>
+                <p><strong>Варианты решения:</strong></p>
+                <div style="border: 1px #C71585 solid;"><img src="_img/ex_6.jpg"  alt=""/></div>
+                <div class="comment" style="border: 1px #C71585 solid">                    
+                </div>                
+            </div>
+        </div>
+        <!-- События hover() и toggle() -->
+        <!-- События hover() и toggle() -->
+        <!-- События hover() и toggle() -->
+        
+        <p class="headOfTitle">Как получить информацию о событиях? (Объект событий)</p>
+        <p>Переменная <span class="comment">eventName</span> в скрытой функции является <strong>объектом событий</strong> и хранит всю информацию о событии.</p>
+        <p class="comment">$( ' divName ' ).click( function(<span style='color: #FF00AE'>eventName</span>) { var a = eventName.screenY;  } ) ;</p>
+        <p class="videokurs">Можно получить такую информацию из объекта событий (для свойства click):</p>
+        <p><span class="comment">eventName.screenX;</span> - Координата X щелчка указателя мыши от КРАЯ МОНИТОРА, а не браузера.</p>
+        <p><span class="comment">eventName.screenY;</span> - Координата Y щелчка указателя мыши от КРАЯ МОНИТОРА, а не браузера.</p>
+        <p><span class="comment">eventName.pageX;</span> - Координата X щелчка указателя мыши от КРАЯ БРАУЗЕРА.</p>
+        <p><span class="comment">eventName.pageY;</span> - Координата Y щелчка указателя мыши от КРАЯ БРАУЗЕРА.</p>
+        <p><span class="comment">eventName.altKey;</span> - Была ли нажата клавиша <strong>ALT</strong> на клавиатуре, при щелчке мыши (Возвращает значение <strong>true/false</strong>).</p>
+        <p><span class="comment">eventName.ctrlKey;</span> - Была ли нажата клавиша <strong>CTRL</strong> на клавиатуре, при щелчке мыши (Возвращает значение <strong>true/false</strong>).</p>
+        <p><span class="comment">eventName.shiftKey;</span> - Была ли нажата клавиша <strong>SHIFT</strong> на клавиатуре, при щелчке мыши (Возвращает значение <strong>true/false</strong>).</p>
+        <p><span class="comment">eventName.target;</span> - Объект отреагировавший на клик.</p>
+        <div class="block" style="margin-left: 120px; width: 570px">
+            <p>Чтобы узнать id объекта отреагировавшего на клик, нужно:</p>
+            <div class="comment">
+                <p>$('#divName').click(function (e) {</p>
+                <p>var m = e.target;</p>
+                <p>document.write( " Объект отреагировавший на клик: " + m.id );</p>
+                <p>} ) ;</p>
+            </div>
+        </div>
+        <p><span class="comment">eventName.preventDefault;</span> - Запретить стандартное действие по умолчанию.</p>
+        <div class="block" style="margin-left:auto; margin-right:auto; width: 850px">            
+            <div class="comment">
+                <p>$('#urlName').click(function (e) {</p>
+                <p>e.preventDefault();</p>
+                <p>$( ' #divName ' ).append( ' &#60p&#62Вместо перехода по <span style='color: #0000FF; text-decoration: underline'>ссылке</span> мы добавили абзац.&#60/p&#62 ' );</p>
+                <p>} ) ;</p>
+            </div>
+        </div>
+        <div class="block" style="margin-left:auto; margin-right:auto; width: 850px">            
+            <p>Второй вариант, вместо <span class="comment">.preventDefault();</span> написать <span class="comment">return false</span>, но код, который будет идти после <span class="comment">return false</span> выполнятся не будет.</p>
+            <p class="comment">$('#urlName').click(function (e) {</p>
+            <p><span class="comment">$( ' #divName ' ).append( ' &#60p&#62Вместо перехода по ссылке мы добавили абзац.&#60/p&#62 ' );</span> - ВЫПОНЯЕТСЯ !</p>
+            <p class="comment" style='color: #FF00AE'>return false;</p>
+            <p><span class="comment">$( ' #divName ' ).append( ' &#60p&#62Вместо перехода по ссылке мы добавили абзац.&#60/p&#62 ' );</span> - НЕ ВЫПОНЯЕТСЯ !</p>
+            <p class="comment">} ) ;</p>
+        </div>
+        <!-- События hover() и toggle() -->
+        <!-- События hover() и toggle() -->
+        <!-- События hover() и toggle() -->
+        
+        
+        
+        
+        
+        
+        <div class="block" style="background-color: #FFEFD5">
+            <p><strong>Пример задачи JQUERY_8 (90):</strong>Вам надо написать скрипт, который делает следующее. При щелчке на любом из наших 4-х мотоциклов, вокруг него должна появляться сплошная рамка в 4px. При этом, если в момент щелчка мышью по мотоциклу была зажата клавиша shift, то цвет  рамки должен быть #cc0000, а если не была зажата то цвет рамки должен быть #333333. При повторном щелчке по тому же самому мотоциклу рамка должна исчезать.</p>
+ 
+            <div>
+                <p><strong>Варианты решения:</strong></p>
+                <div style="border: 1px #C71585 solid;"><img src="_img/ex_7.jpg"  alt=""/></div>
+                <div class="comment" style="border: 1px #C71585 solid">
+                    90
+                </div>                
+            </div>
+        </div>
+        
+        <div class="block" style="background-color: #FFEFD5">
+            <p><strong>Пример задачи JQUERY_9 (91):</strong>Сделать так, чтобы во время нажатия кнопки отправки формы с id="#my_button", появлялось сообщение с вопросом: "Вы подтверждаете правильность ввода данных?" В этом окошке должны быть кнопки "OK" и "Отмена". Если человек нажмет "Ок" то форма отправляется как положено, а если нажмет "Отмена", то форма  не отправляется. Подсказка: для задания вопроса используйте метод confirm()</p>
+ 
+            <div>
+                <p><strong>Варианты решения:</strong></p>
+                <div style="border: 1px #C71585 solid;"><img src="_img/ex_8.jpg"  alt=""/></div>
+                <div class="comment" style="border: 1px #C71585 solid">
+                    91
+                </div>                
+            </div>
+        </div>
+        
+        <div class="block" style="background-color: #FFEFD5">
+            <p><strong>Пример задачи JQUERY_10 (92):</strong>Это домашнее задание состоит из трех частей.</p>
+            <p>1. Над галереей нужно сделать текстовый переключатель "Показать/Скрыть галерею", 
+который будет показывать и скрывать галерею функциями slideUp() и slideDown(). 
+Изначально галерея должна быть скрыта.</p>
+            <p>2. Приглядитесь к нашей галерее. У нее есть один существенный недостаток. 
+Если, например, у нас в большой картинке на данный момент стоит желтый мотоцикл и при этом, 
+мы щелкаем по миниатюре этого же желтого мотоцикла, 
+то большая картинка будет  пытаться загрузиться еще раз. 
+Это не очень то и хорошо, поэтому ваша задача состоит в  том, 
+чтобы при такой ситуации такого не происходило и большая картинка просто оставалась на месте.</p>
+            <p>3. Ваша задача выделить маленькую картинку того мотоцикла, который сейчас показан. 
+Она должна быть выделена одним из следующих способов -
+либо должна быть обведена рамкой, 
+либо должна иметь прозрачность 60%
+либо и то и другое вместе.</p>
+ 
+            <div>
+                <p><strong>Варианты решения:</strong></p>
+                <div style="border: 1px #C71585 solid;"><img src="_img/ex_9.jpg"  alt=""/></div>
+                <div class="comment" style="border: 1px #C71585 solid">
+                    92
+                </div>                
+            </div>
+        </div>
+        
+    </div> <!-- class="wrapper" -->
+</body>
+</html>

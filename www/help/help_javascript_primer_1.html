@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Пример задачи</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+        <link rel="stylesheet" href="_css/style.css" type="text/css"/>
+
+    </head>
+    <body>        
+        <div class="wrapper">
+            <p>Написать функцию, которая выводит на экран: название браузера, язык браузера, название операционной системы, включены ли куки, подключен ли пользователь к Интернету, разрешение экрана, глубину цвета, адрес загруженной страницы</p>
+            <script type="text/javascript">
+                document.write("<h1>Решение задачи</h1>");			
+                function userDetails(){
+                    document.write("Название браузера: " + navigator.userAgent + "<br />");
+                    document.write("Язык браузера: " + navigator.language + "<br />");
+                    document.write("Название ОС: " + navigator.oscpu + "<br />");
+                    document.write("Включены ли куки: " + navigator.cookieEnabled + "<br />");
+                    document.write("Подключение к сети: " + navigator.onLine + "<br />");
+                    document.write("Разрешение: " + screen.width + "x" + screen.height + "<br />");
+                    document.write("Глубина цвета: " + screen.colorDepth + "x" + screen.height + "<br />");
+                    document.write("Адрес загруженной страницы: " + location.href + "<br />");
+                }
+                userDetails();
+            </script>
+        </div>
+    </body>
+</html>

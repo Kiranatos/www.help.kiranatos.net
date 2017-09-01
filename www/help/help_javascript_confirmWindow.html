@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Пример вызова нового окна не в браузере</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="_css/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <script type="text/javascript">
+                var answer = confirm("Вопрос ?");
+                if (answer) { document.write("Была нажата кнопка Yes"); }
+                else { document.write("Была нажата кнопка No"); }
+            </script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Конспект по javascript</title>
+</head>
+
+<body>
+	<h1 align="center">Конспект по javascript</h1>
+
+	<div>
+		<script type="text/javascript">
+			document.write("<p>Выведенная строка с помощью <strong> javascript </strong></p>");
+			
+			// комментарий
+			document.write("<h2>Объявление и вывод значения переменной:</h2><br/>");
+			var _price, $price$, price3=3;
+			_price = 500;
+			_price="string";
+			document.write(_price);
+
+			// комментарий
+			document.write("<br/>Объявление и вывод значения масива:<br/>");			
+			var matrix = ["[e1]","[e2]",03,"[e4]","[e5]","[e6]","[e7]",8];
+			var myArray = [45, "word", true, 98];
+			document.write(matrix);
+			
+			// комментарий
+			document.write("<br/>Создание и вывод отдельного элемента масива:<br/>");
+			var city = new Array ('London','Kyiv','Tokyo','New York','Boston','Rome');
+			document.write(city[price3]);
+			
+			// комментарий
+			document.write("<h2>Втавка нового элемента в конец масива, с помощью команды push:</h2>>");
+			matrix.push("_вставленный эл. в конец масива_");
+			document.write("Длина масива:" + matrix.length);
+			document.write("<br/>Новый масив: <br/>" + matrix);			
+
+			// комментарий
+			document.write("<br/>Втавка нового элемента в начало масива, с помощью команды unshift:<br/>");
+			matrix.unshift("_вставленный эл. в начало масива_");
+			document.write("Длина масива:" + matrix.length);
+			document.write("<br/>Новый масив: <br/>" + matrix);			
+			
+						// комментарий
+			document.write("<br/></strong>Удаление последнего элемента масива, с помощью команды pop:</strong><br/>");
+			matrix.pop();
+			document.write("Длина масива:" + matrix.length);
+			document.write("<br/><strong>Новый масив: </strong><br/>" + matrix);			
+
+			// комментарий
+			document.write("<strong><br/>Удаление первого элемента, с помощью команды shift:<br/></strong>");
+			matrix.shift();
+			document.write("Длина масива:" + matrix.length);
+			document.write("<br/>Новый масив: <br/>" + matrix);			
+
+			// комментарий
+			document.write("<br/><strong> .splice(x,n); - удаляет с позиции номер х, количество элементов n </strong>");
+			matrix.splice(1,2);
+			document.write("<br/><strong> .splice(x,0,\"новый элемент\",\"новый элемент\",\"новый элемент\"); - вставляет с позиции номер х, 0 - индикатор что нечего удалять не надо </strong>");
+			matrix.splice(3,0,"новый элемент","новый элемент","новый элемент");
+			document.write("<br/><strong> .splice(x,0,\"новый элемент\",\"новый элемент\",\"новый элемент\"); - заменяет с позиции номер х, количество элементов n </strong>");
+			matrix.splice(3,3,"новый элемент","новый элемент","новый элемент");
+			
+			/* Дополнительные методы для работы с массивами
+			реверс - reverse()
+			сортировка - sort()
+			замена разделителя - join()
+			соединение массивов - concat()
+			делаем вырезку из массива - slice()
+			*/
+			document.write("<br/><h2> Метод reverse() - переварачивает матрицу</h2>");
+			document.write(matrix.reverse());
+			document.write("<br/><h2> Метод sort() - сортирует матрицу</h2>");
+			document.write(new Array (5,6,3,7,4,1).sort());
+			document.write("<br/><h2> Метод join(разделитель) - заменяет разделитель при выводе на любой другой</h2>");
+			document.write(matrix.join(" =T_T= "));
+			document.write("<br/><h2> Метод concat() - соединение массивов</h2>");
+			document.write(matrix.concat(city));
+			document.write("<br/><h2> Метод slice() - делаем вырезку из массива</h2>");
+			document.write(matrix.slice(2,7));
+			
+			//Условные операторы
+			if (true){
+				document.write("<h2> Условные операторы (смотри код) </h2>");
+			}
+			else if (true) {
+				document.write("<h2> Условные операторы </h2>");			
+			}
+			else{
+				document.write("<h2> Условные операторы </h2>");			
+			}
+			
+			var i = 1;
+			while (i <=10 )
+			{
+				document.write("<h4> Это цикл while</h4>... " + i);
+				i++;
+			}
+			
+			for (var j = 0; j < 10; j++)
+				document.write("<h4> Это цикл for</h4>... " + j);
+				
+			var a = window.open("","novoeOkno","width=800","height=300");
+			//a.document.write("Кто сдесь?");
+			window.document.write("Кто сдесь?");
+			
+			
+			//alert("Модальное окно alert");
+			
+			var age = promt ("Сколько Вам лет?","Мой возраст: ");
+			
+		</script>
+	</div>
+
+</body>
+</html>

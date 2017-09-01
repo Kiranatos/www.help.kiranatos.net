@@ -1,0 +1,395 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="_css/style.css" rel="stylesheet" type="text/css">
+<title>Конспект по javascript</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        
+        <p>Поместить кусок кода джаваскрипт в html-файл<p>        
+        <div class="comment block">
+            <p>&#60script type="text/javascript"&#62</p>
+            <p>...</p>
+            <p>&#60/script&#62</p>
+        </div>       
+        
+        <p>Подключение javascript-файла в блоке &#60head&#62<p>
+                <div class="block comment">
+                    <p>&#60head&#62</p>
+                    <p>&#60script src="js/myJavaScript.js" type="text/javascript"&#62&#60/script&#62</p>
+                    <p>&#60/head&#62</p>
+                </div>
+                
+        <p>Файл можно подключить и в конце html-файла, чтобы загрузился сначала весь документ - а потом выполнялись джаваскрипты<p>                
+                <div class="block comment">
+                    <p>&#60body&#62</p>
+                    <p>&#60script src="js/myJavaScript.js" type="text/javascript"&#62&#60/script&#62</p>
+                    <p>&#60/body&#62</p>
+                    <p>&#60/html&#62</p>
+                </div>          
+
+                <p>Чтобы не подключать в конце html-файла, в файле javascript нужно добавить метод-шапку(для ожидания формирования DOM-дерева) из библиотеки <a href="http://localhost:8383/kiranatos/help/help_jquery_1.html" target="_blank">JQuery</a> - которая позволяет дожидаться загрузки документа:<p>
+                <div class="block comment">
+                    <p>$(document).ready(function(){</p>
+                    <p>...........</p>
+                    <p>});</p>
+                </div>
+        <p>Её сокращённый вариант:<p>
+                <div class="block comment">
+                    <p>$(function(){</p>
+                    <p>...........</p>
+                    <p>});</p>
+                </div>                
+
+        <p class="headOfTitle">Простейшие элементы языка javascript:</p>
+        <p class="comment">window.document.write("&#60p&#62Вывод &#60strong&#62строки&#60/strong&#62на экран&#60/p&#62 &#60br/&#62");</p>
+        <p>Тег (аналог \n в java) <a href="http://htmlbook.ru/html/br" class="comment" title="Тег br" target="_blank">&#60br /&#62</a> устанавливает перевод строки в том месте, где этот тег находится. В отличие от тега абзаца &#60p&#62, использование тега <a href="http://htmlbook.ru/html/br" class="comment" title="Тег br" target="_blank">&#60br /&#62</a> не добавляет пустой отступ перед строкой. Если текст, в котором используется перевод строки, обтекает плавающий элемент, то с помощью атрибута clear тега &#60br&#62 можно сделать так, чтобы следующая строка начиналась ниже элемента.</p>
+        <p style="font-weight: bold">Объявление переменных:</p>
+        <p>Допустимые названия переменных: <span class="comment">date, $date, _date, date333, date$, da_te</span>. Чувствительны к регистру!</p>
+        <p>Для того, чтобы вывести <span class="comment">"</span> или другой <strong>спецсимвол</strong> в javascript нужно <span class="comment">document.write(" \" \& ");</span></p>
+        <div class="comment">
+            <p>document.write("Объявление и вывод значения переменной:");</p>
+            <p>var a, $b$, c;</p>
+            <p>a = 500;</p>
+            <p>a="string";</p>
+            <p>document.write(a);</p>
+        </div>
+        <p><span class="comment">typeof(a)</span> - Определение типа переменной (или функции).</p>
+        <!-- Простейшие элементы языка javascript -->
+        <!-- Простейшие элементы языка javascript -->
+        <!-- Простейшие элементы языка javascript -->
+        
+        
+        <p class="headOfTitle">Масивы:</p>
+        <div class="comment">            
+		<p>var matrix = new Array ('string','sTring','fff','ggg');</p>
+                <p>var matrix = new Array (5);</p>
+                <p>var matrix = [45, "word", true, 98];</p>
+		<p>document.write("&#60br /&#62Масив: &#60br/&#62" + matrix);</p>
+                <p>document.write("&#60br /&#62Длина масива: &#60br/&#62" + matrix.length);</p>
+                <p>document.write(matrix[4]);</p>
+        </div>
+        <p>Втавка нового элемента в <strong>конец</strong> масива, с помощью команды <span class="comment">push</span>:</p>
+        <p class="comment">matrix01.push("конец");</p>
+        <p>Втавка нового элемента в <strong>начало</strong> масива, с помощью команды <span class="comment">unshift</span>:</p>
+        <p class="comment">matrix01.unshift("начало");</p>
+        <p>Удаление <strong>последнего</strong> элемента масива, с помощью команды <span class="comment">pop</span>:</p>
+        <p class="comment">matrix01.pop();</p>
+        <p>Удаление <strong>первого</strong> элемента масива, с помощью команды <span class="comment">shift</span>:</p>
+        <p class="comment">matrix01.shift();</p>
+        <p class="videokurs">Удаление и вставка с помощью метода <span class="comment">.splice(x,n);</span></p>
+        <p><span class="comment">.splice(x,n);</span> - удаляет с позиции под номером х, количество элементов n</p>
+        <p><span class="comment">.splice(x,0,"новый элемент","новый элемент","новый элемент");</span> - вставляет с позиции номер х, 0 - индикатор что нечего удалять не надо</p>
+        <p><span class="comment">.splice(x,n,"новый элемент","новый элемент","новый элемент");</span> - заменяет с позиции номер х, количество элементов n</p>
+        <p class="videokurs">Дополнительные методы для работы с массивами:</p>
+        <p><span class="comment">.reverse();</span> - реверс, переварачивает матрицу</p>
+        <p><span class="comment">new Array (5,6,3,7,4,1).sort();</span> - сортирует матрицу</p>
+        <p><span class="comment">.join(" ^_^ ");</span> - заменяет разделитель при выводе матрицы на любой другой</p>
+        <p><span class="comment">matrix01.concat(matrix02);</span> - соединение массивов</p>
+        <p><span class="comment">.slice(2,7);</span> - делаем вырезку из массива</p>
+        <!-- Масивы -->
+        <!-- Масивы -->
+        <!-- Масивы -->
+        <p class="headOfTitle">Многомерные масивы:</p>
+        <img src="_img/bigMatrixes.jpg" alt=""/>        
+        <!-- Многомерные масивы -->
+        <!-- Многомерные масивы -->
+        <!-- Многомерные масивы -->
+        
+        <p class="headOfTitle">Условные операторы:</p>
+           <div class="comment block">
+               <p>if (true){ document.write(""); }</p>
+               <p>else if (true) { document.write(""); }</p>
+               <p>else{ document.write(""); }</p>
+               <div style="text-align: right;"><img src="_img/tern.jpg" alt="Тернарный оператор"/></div>
+            </div>
+           <div class="comment block">
+               <p>while (i <=10 ) { i++; }</p>
+           </div>
+           <div class="comment block">
+               <p>for (var j = 0; j < 10; j++) document.write("");</p>
+           </div>
+            <div class="comment block">
+               <p>switch (Number(str)) {</p>
+               <div style="text-indent: 20px;">
+                   <p>case 1:</p>
+                   <p>...</p>
+                   <p>break;</p>
+                   <p>case 2:</p>
+                   <p>...</p>
+                   <p>break;</p>
+                   <p>case 3:</p>
+                   <p>...</p>
+                   <p>break;</p>
+                   <p>default: ....... ;</p>
+               </div>
+               <p>}</p>
+           </div>        
+        <!-- Условные операторы -->
+        <!-- Условные операторы -->
+        <!-- Условные операторы -->
+
+        <p class="headOfTitle">Всплывающие окна:</p>
+        <p>Объявление и вызов нового окна:</p>
+            <div class="comment block">
+               <p>var a = window.open("","newWindow","width=400","height=300");</p>
+               <p>a.document.write("Вывод в контент нового окна");</p>
+               <p>window.document.write("Вывод в контент родительского окна, сокращ.вариант: document.write");</p>
+            </div>
+        <p class="primer">Пример: <a href="help_javascript_newWindow.html" target="_blank">Новое окно</a></p>
+
+        <p>Модальное окно:</p>
+            <div class="comment block">
+               <p>alert(" ---Простое модальное окно--- ");</p>
+            </div>
+        <p class="primer">Пример: <a href="help_javascript_modWindow1.html" target="_blank">Модальное окно</a></p>
+        
+        <p>Модальное окно с вопросом и строкой для ответа:</p>
+            <div class="comment block">
+               <p>var b = prompt("---Вопрос---","---Ответ в строке по умолчанию---");</p>
+               <p>alert(" Ответ из строки: " + b);</p>
+            </div>        
+        <p class="primer">Пример: <a href="help_javascript_modWindow2.html" target="_blank">Модальное окно с вопросом</a></p>
+        
+        <p>Окно подтверждения с кнопками [ДА] и [НЕТ]:</p>
+            <div class="comment block">
+               <p>var answer = confirm("Вопрос ?");</p>
+               <p>if (answer) { document.write("Была нажата кнопка Yes"); }</p>
+               <p>else { document.write("Была нажата кнопка No"); }</p>
+            </div>        
+        <p>Возвращает true или false</p>
+        <p class="primer">Пример: <a href="help_javascript_confirmWindow.html" target="_blank">Окно подтверждения</a></p>        
+        <!-- Всплывающие окна -->
+        <!-- Всплывающие окна -->
+        <!-- Всплывающие окна -->
+      
+        <p class="headOfTitle">Функция:</p>
+        <p>без возврата значений</p>
+        <div class="comment block">
+            <p>function <em>nameOfFunction</em> (a,b,c,d) { </p>
+            <p>a = b + c;</p>
+            <p>document.write(d);</p>
+            <p>}</p>
+        </div>
+        <p>с возвратом значений</p>
+        <div class="comment block">
+            <p>function <em>nameOfFunction</em> (a,b,c,d) { </p>
+            <p>a = b + c;</p>
+            <p>return a;</p>
+            <p>}</p>
+        </div>
+        <!-- Функция -->
+        <!-- Функция -->
+        <!-- Функция -->
+        
+        <p class="headOfTitle">String:</p>
+        <p class="comment">str = "текст типа string";</p>
+        <p><span class="comment">s = str.toUpperCase();</span> - Сделать все символы строки верхним регистром</p>
+        <p><span class="comment">s = str.toLowerCase();</span> - Сделать все символы строки нижним регистром</p>
+        <p><span class="comment">s = str.indexOf("типа");</span> - Первое вхождение данной подстроки в строку</p>
+        <p><span class="comment">s = str.lastIndexOf("типа");</span> - Последнее вхождение данной подстроки в строку</p>
+        <p><span class="comment">s1 = str.slice(7); s2 = str.slice(9,13);</span> - Вырезание подстроки</p>
+        <p><span class="comment">a = str.charAt(4);</span> - 4-й символ строки str. (Возвращаемый тип: String, а не Char)</p>
+        <p><span class="comment">code = str.charCodeAt(4);</span> - код 4-го символа в строке str (Русские символы "а"-"я","А"-"Я" лежат в диапазоне 1040-1103). Пример использования:</p>
+        <div class="comment block">
+            <p>for (var i=0; i < str.length; i++) {</p>
+            <p>if (str.charCodeAr(i)<1040 || str.charCodeAt(i) > 1103) {</p>
+            <p>document.write("символ не попадает в диапазон русских букв.");</p>
+            <p>} }</p>
+        </div>
+        <!-- String -->
+        <!-- String -->
+        <!-- String -->
+        
+        <p class="headOfTitle">Регулярные выражения:</p>
+        <p>Регулярные выражения обозначаются символом "<span class="comment">/</span>", пример: <span class="comment">regV = /регулярное выражение/;</span> Спецсимволы <strong>. (</strong> в рег.выражениях используются только для подшаблонов, поэтому их нужно экранировать <span class="comment">\. \(</span></p>
+        <p class="block"><span class="comment">var n = str.search(regV)</span> - поиск этого рег.выражения в строке, возвращает номер позиции (-1, 0-9)</p>
+        <p>если совпадений не найдено метод search возвращает -1</p>
+        <p class="videokurs">Примеры для <span class="comment">str="сумма 45000 грн"; str.search(regV);</span></p>
+        <p>1. <span class="comment">var regV=/\d\d\d\d\d/</span> - поиск 5-ти подряд идущих символов от 0-9</p>
+        <p>2. <span class="comment">var regV=/\d{5}/</span> - поиск 5-ти подряд идущих символов от 0-9 (сокращённая запись - см. таблица внизу - кванторы)</p>
+        <p>3. <span class="comment">var regV=/^\d{5}/</span> - поиск 5-ти подряд идущих символов от 0-9, которые должны идти вначале (символ <span class="comment">^</span>) строки!</p>
+        <p>4. <span class="comment">var regV=/^\d{5}$/</span> - поиск 5-ти подряд идущих символов от 0-9, которые должны идти вначале строки, и эти числа также должны быть последними в строке (символ <span class="comment">$</span>) - т.е. после них нечего быть не должно!</p>
+        <p>5. <span class="comment">var regV=/\d\d/g</span> - поиск 2-х подряд идущих символов от 0-9, модификатор шаблона <span class="comment">g</span>(глобльный поиск) находит все выражения в строке.</p>
+        
+        <p class="block"><span class="comment">var n = str.match(regV)</span> - поиск рег.выражения в строке, возвращает само выражение</p>
+        <p>6. Выражение для поиска сайтов</p>
+        <p><img src="_img/regVexample.jpg" width="950px" alt=""/></p>
+        <p><span class="comment">s?</span> - буква s может быть в названии протокола http, а может и не быть</p>
+        <p><span class="comment">(https?: \ / \ / )?</span> - протокол http(s) может быть, а может и не быть в названии</p>
+        <p><span class="comment">(www\.)?</span> - протокол www может быть, а может и не быть в названии</p>
+        <p><span class="comment">[a-z0-9-\.]</span> - допустимые символы в названии: "a-z", "0-9", "-" тире, "." точка</p>
+        <p><span class="comment">{2,1000}</span> - в названии должно быть не меньше 2 и не больше 1000 символов</p>
+        <p><span class="comment">g</span> - все выражения в строке. (записываетв матрицу)</p>
+        <p><span class="comment">i</span> - символы не зависят от регистра.</p>
+        
+        <p class="block"><span class="comment">var n = str.replace( regV , ' . ' );</span> - заменяет все комы на точки (regV= / , /g ).</p>
+        
+        <img src="_img/RegExp_tutorial.png" alt="Регулярные выражения"/>
+        <!-- Регулярные выражения -->
+        <!-- Регулярные выражения -->
+        <!-- Регулярные выражения -->
+        
+        <p class="headOfTitle">Работа с числами. Объект Math.</p>
+        <p>Функция <span class="comment">isNaN(b)</span> - если не число то возвращает <strong>true</strong>, Если число то <strong>false</strong>.</p>
+        <p>Функция <span class="comment">var a = parseInt(b)</span> - преобразовывает строку в виде "36", "42 грн", "8,25" в число. <strong>Число должно стоять в начале строки, всё что после цифр 0-9 отбрасывется - (36, 42, 8) </strong>, Если преобразование не удалось то возвращает <strong>NaN</strong>.</p>
+        <p>Функция <span class="comment">var a = parseFloat(b)</span> - преобразовывает строку в виде "36", "42.1 грн", "8.25" в число. <strong>Число должно стоять в начале строки, всё что после цифр 0-9 "." отбрасывется - (36, 42.1, 8.25) </strong>, Если преобразование не удалось то возвращает <strong>NaN</strong>.</p>
+        <p>Функция <span class="comment">var a = Number(bool)</span> - преобразовывает в число (может преобразовать: "36", true, false; не может преобразовать: "36 шт")</p>
+        <p>Функция <span class="comment">var a = b.toFixed(4)</span> - позволяет зафиксировать количество цифр после точки (чтобы нули не отбрасывались например 1.5000 )</p>
+        
+        <p>Функция <span class="comment">var a = Math.round(b)</span> - стандартное округление чисел</p>
+        <p>Функция <span class="comment">var a = Math.ceil(b)</span> - округление чисел в большую сторону (80.001 -> 81)</p>
+        <p>Функция <span class="comment">var a = Math.floor(b)</span> - округление чисел в большую сторону (80.999 -> 80)</p>
+        <p class="videokurs">Генерация случайного числа:</p>
+        <p>Функция <span class="comment">var a = Math.random();</span> - генерирует числа, от 0 до 1! (Пример: 0,34154544487...)</p>
+        <p><span class="comment">var rand = Math.round(Math.random()*100);</span> - округляет и генерирует числа, от 0 до 100</p>      
+        <div class="block">
+            <p class="comment">function myRandom (from, to) {</p>
+            <p><span class="comment">return Math.floor(( Math.random()*( to - from + 1 )) + from );</span> - функция для генерации чисел любого диапазона, от <span class="comment">from</span> до <span class="comment">to</span></p>
+            <p class="comment">}</p>
+        </div>
+        <!-- Работа с числами. Объект Math. -->
+        <!-- Работа с числами. Объект Math. -->
+        <!-- Работа с числами. Объект Math. -->
+        
+        <p class="headOfTitle">Date.</p>
+        <p><span class="comment">var t2 = new Date(2012,0,1,0,0,0);</span> - сначала нужно объявить тип переменной и создать объект Date. (1 января 2012 года 0:00:00)</p>
+        <p><span class="comment">var t2 = new Date(1000 * 60 * 60 * 24);</span> - создание объекта с помощью количества милисекунд. (2 января 1970 года)</p>
+        <p><span class="comment">var t = new Date();</span> - Без параметров - для сегодняшнего дня.</p>
+        <p><span class="comment">var y = t.getFullYear();</span> - получить текущий год.</p>
+        <p><span class="comment">var m = t.getMonth();</span> - получить текущий месяц ( № 0 - № 11 ).</p>
+        <p><span class="comment">var d = t.getDate();</span> - получить сегодняшнее число.</p>
+        <p><span class="comment">var d = t.getDay();</span> - получить день недели ( 0-Вс 1-Пн 2-Вт 3-Ср 4-Чт ... ).</p>
+        <p><span class="comment">var h = t.getHours();</span> - получить данный час.</p>
+        <p><span class="comment">var m = t.getMinutes();</span> - получить данную минуту.</p>
+        <p><span class="comment">var s = t.getSeconds();</span> - получить данную секунду.</p>
+        <p style="font-weight: bold">Дата и время выводится то, что на компьютере пользователя, а не сервера !!!</p>
+        <p><span class="comment">var s = t.getTime();</span> - получить количество милисекунд, прошедших с 1 января 1970.</p>
+        <p><span class="comment">var s = t.getTime() / 1000;</span> - получить количество секунд, прошедших с 1 января 1970.</p>
+        <p><span class="comment">var m = (t.getTime() / (1000 * 60));</span> - получить количество минут, прошедших с 1 января 1970.</p>
+        <p><span class="comment">var h = (t.getTime() / (1000 * 60 * 60));</span> - получить количество часов, прошедших с 1 января 1970.</p>
+        <p><span class="comment">var d = (t.getTime() / (1000 * 60 * 60 * 24));</span> - получить количество дней, прошедших с 1 января 1970.</p>
+        <p><span class="comment">var d = (t2.getTime() / (1000 * 60 * 60 * 24));</span> - получить количество дней, прошедших с 1 января 1970 до даты t2.</p>        
+        <!-- Date -->
+        <!-- Date -->
+        <!-- Date -->
+        
+        <p class="headOfTitle">Задержка.</p>        
+        <p><span class="comment">setTimeout("alert('Тест');", 3000)</span> - Одноразовый вызов действия через 3000 милисекунд (3сек).</p>
+        <p><span class="comment">var f = setInterval(nameFunc, 3000)</span> - Многоразовый вызов без круглых скобок function setTimeout(){} через интервал 3000 милисекунд (3сек).</p>
+        <p><span class="comment">clearInterval(f)</span> - Остановка break выполнения.</p>
+        <!-- Задержка -->
+        <!-- Задержка -->
+        <!-- Задержка -->
+        
+        <p class="headOfTitle">Создание собственного объекта</p>
+        <div class="block">
+            <p class="videokurs">Вариант создания №1:</p>
+            <div class="comment">
+                <p>var objectName = new Object();</p>
+                <p>objectName.color = "белый";</p>
+                <p>objectName.valueName = 58;</p>
+                <p>objectName.boo = true;</p>
+            </div>
+            <p class="videokurs">Вариант создания №2:</p>
+            <p class="comment">var objectName = { color:"белый", valueName:58, boo = true };</p>
+        </div>
+        <div class="block">
+            <p class="videokurs">Простой вызов свойства объекта:</p>
+            <p class="comment">a = objectName.color;</p>
+            <p class="videokurs">Вызов свойства объекта через другую переменную:</p>
+            <div class="comment">
+                <p>var с = "color";</p>
+                <p>a = objectName.[c];</p>
+            </div>
+        </div>
+        <div class="block">
+            <p class="videokurs">Создание методов объекта:</p>            
+                <p class="comment">objectName.funcName = function (k, col , j) {</p>
+                <p><span class="comment">var d =  objectName.color;</span> (вариант 1)</p>
+                <p><span class="comment">var d =  objectName[col];</span> (вариант 2)</p>
+                <p><span class="comment">var d =  this[col];</span> (вариант 3)</p>
+                <p class="comment">return d;</p>
+                <p class="comment">};</p>            
+            <p class="videokurs">Простой вызов метода-функции объекта:</p>
+            <p class="comment">objectName.funcName(78, "color", 99);</p>
+        </div>
+        <!-- Создание собственного объекта -->
+        <!-- Создание собственного объекта -->
+        <!-- Создание собственного объекта -->        
+        
+        <p class="headOfTitle">Вывод всех свойств объекта на экран</p>
+        <div class="comment">
+            <p>var optionName;</p>
+            <p>for (optionName in objectName) {</p>
+            <p>var document.write(optionName + " : " + objectName[optionName] + "&#60br/&#62");</p>
+            <p>}</p>
+        </div>
+        <p class="videokurs">Все методы для объекта: <a href="help_javascript_document.html" target="_blank">document</a>. (<a href="http://www.spravkaweb.ru/javascript/reference/document/property#height" target="_blank">Доп. информация по объекту document</a>.)</p>
+        <p class="videokurs">Все методы для объекта: <a href="help_javascript_location.html" target="_blank">location</a></p>
+        <p class="videokurs">Все методы для объекта: <a href="help_javascript_navigator.html" target="_blank">navigator</a></p>
+        <p class="videokurs">Все методы для объекта: <a href="help_javascript_screen.html" target="_blank">screen</a></p>
+        <p class="primer"><a href="help_javascript_primer_1.html" target="_blank">Пример задачи по этим объектам</a></p>
+        <!-- Вывод всех свойств объекта на экран -->
+        <!-- Вывод всех свойств объекта на экран -->
+        <!-- Вывод всех свойств объекта на экран -->  
+        
+        <p class="headOfTitle">Модификация веб-страниц. Доступ к объектам html-документа и их свойствам</p>
+        <div class="block">
+            <p>Для получения масива всех элементов по имени тега</p>
+            <p><span class="comment">var b_matrix = document.getElementsByTagName('table');</span> - масив таблиц</p>
+            <p><span class="comment">var b_matrix = document.getElementsByTagName('p');</span> - масив абзацев</p>
+            <p><span class="comment">var b_matrix = document.getElementsByTagName('img');</span> - масив картинок</p>
+            <p class="comment">document.write(b_matrix.length);</p>
+        </div>
+        <div class="block">
+            <p>Для получения одного элемента по идентефикатору, переменная является ссылкой на объект</p>
+            <p><span class="comment">var d_name = document.getElementById('idNameForImg');</span> - картинка с id="idNameForImg"</p>
+            <p><span class="comment">alert (d_name.alt);</span> - вывод альтернативного текста (alt="..." в html) картинки во всплывающее модальное окно</p>
+            <p><span class="comment">document.write (d_name.width);</span> - вывод ширины картинки в окно браузера</p>
+        </div>
+        <div class="block">
+            <p>Получение доступа к потомкам объекта:</p>
+            <p><span class="comment">var b_ChildsMatrix = d_name.childNodes;</span> - матрица потомков для объекта d_name (масив дочерних узлов)</p>
+            <p>Вывод альтернативного текста (alt="..." в html) в окно этих потомков:</p>
+            <p class="comment">for (var i = 0; i < b_ChildsMatrix.length; i++) {</p>
+            <p class="comment">document.write (b_ChildsMatrix[i].alt);</p>
+            <p class="comment">}</p>
+            <p>Вывод будет иметь вид: <span class="comment">#undefined, названиеОбъекта, #undefined, названиеОбъекта, #undefined, названиеОбъекта, #undefined</span>. Где "названиеОбъекта" будут теги, а "#undefined" - пробелы между тегами, так как и текст и теги для джаваскрипта являются объектами.</p>           
+            <img src="_img/children.jpg" alt=""/>
+            <p><a href="https://vk.com/photo282632372_366082251" title="DOM-дерево" target="_blank"><img src="_img/DOM.jpg" alt=""/></a></p>
+        </div>
+        <div class="block">
+            <p>Доступ к элементам по родственной связи</p>
+            <p><span class="comment">var b_Parent = d_name.parrentNode;</span> - узнать родителя объекта</p>
+            <p class="comment">document.write (b_Parent.id);</p>
+            <p><span class="comment">var b_Brother1 = d_name.nextSibling;</span> - узнать следующего брата (тег который идёт после) объекта</p>
+            <p class="comment">document.write (b_Brother1);</p>
+            <p><span class="comment">var b_Brother2 = d_name.previousSibling;</span> - узнать предыдущего брата (тег который идёт перед) объекта</p>
+            <p class="comment">document.write (b_Brother2);</p>
+        </div>
+        <div class="block">
+            <p>Для того, чтобы получить доступ к тексту (Например: <span class="comment">&#60p&#62--Текст--&#60p/&#62</span>)</p>
+            <p><span class="comment">alert (d_name.innerText);</span> - Выводит текст: "--Текст--". Понимает Opera, Internet Explorer. Не понимает Firefox.</p>
+            <p><span class="comment">alert (d_name.textContent);</span> - Выводит текст: "--Текст--". Понимает Opera, Firefox. Не понимает Internet Explorer.</p>
+            <p>в отличие от предыдущих свойств, это свойство может не только получать, но и изменять текст</p>    
+            <p class="headOfTitle">Изменение html-кода документа</p>
+            <p><span class="comment">alert (d_name.innerHTML);</span> - Для получение куска кода тега объекта.<span class="primer">Пример: <a href="help_javascript_sample_1.html" target="_blank">Cвойство .innerHTML</a></span></p>
+            <p>Чтобы изменить код, нужно присвоить новый текст:</p>
+            <div class="comment">
+                <p>var myDiv = document.getElementById('nameOfTags')</p>
+                <p>myDiv.innerHTML = "&#60p&#62&#60strong&#62 Вставка свойства innerHTML &#60/strong&#62&#60/p&#62";</p>
+                <p>alert(myDiv.innerHTML);</p>
+            </div>
+            <p class="primer">Пример: <a href="help_javascript_sample_2.html" target="_blank">Изменение текста с помощью свойства .innerHTML</a></p>
+            <img src="_img/code1.jpg" alt=""/>            
+        </div>        
+        <!-- Модификация веб-страниц -->
+        <!-- Модификация веб-страниц -->
+        <!-- Модификация веб-страниц -->        
+    </div> <!-- class="wrapper" -->
+</body>
+</html>

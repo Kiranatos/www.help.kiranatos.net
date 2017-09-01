@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Пример вызова нового окна не в браузере</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="_css/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <script type="text/javascript">
+                var a = window.open("","newWindow","width=600","height=200");
+                a.document.write("Вывод в контент нового окна с помощью команд:<br />");
+                a.document.write("var a = window.open(\"\",\"newWindow\",\"width=400\",\"height=300\");<br />");
+                a.document.write("a.document.write(\"\");");
+                window.document.write("Текст выведен с помощью команды: window.document.write()");
+            </script>
+        </div>
+    </body>
+</html>

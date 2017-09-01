@@ -1,0 +1,214 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Помощь по HTML</title>
+	<link href="_css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<body>
+<div class="wrapper">
+
+	<p class="headOfTitle">Примеры заголовков:</p>	
+	<h1>Заголовок с тегом h1</h1>
+	<h2>Заголовок с тегом h2</h2>
+	<h3>Заголовок с тегом h3</h3>
+	<h4>Заголовок с тегом h4</h4>
+	<h5>Заголовок с тегом h5</h5>
+	<h6>Заголовок с тегом h6</h6>
+
+	<p class="headOfTitle">Примеры списков:</p>	
+	<ol>
+		<li>список с тегом ol и пунктами с тегами li</li>
+		<li>список с тегом ol и пунктами с тегами li</li>
+		<li>список с тегом ol и пунктами с тегами li</li>			
+	</ol>
+	<p>------------------------------------------------------------</p>
+	<ul>
+		<li>список с тегом ul и пунктами с тегами li</li>
+		<li>список с тегом ul и пунктами с тегами li</li>
+		<li>список с тегом ul и пунктами с тегами li</li>			
+	</ul>
+	<p>------------------------------------------------------------</p>
+	<dl>
+		<dt>список с тегом dl и пунктами с тегами dt</dt>
+		<dd>и подпунктами-описания с тегами dd</dd>		
+		<dd>и подпунктами-описания с тегами dd</dd>		
+		<dt>список с тегом dl и пунктами с тегами dt</dt>		
+		<dd>и подпунктами-описания с тегами dd</dd>		
+		<dt>список с тегом dl и пунктами с тегами dt</dt>		
+	</dl>
+	<p>------------------------------------------------------------</p>	
+	<ol start="666">
+		<li>список с тегом ol и пунктами с тегами li</li>
+		<li>список с тегом ol и пунктами с тегами li</li>
+	</ol>
+	<p>------------------------------------------------------------</p>
+	<ul type="square">
+		<li>список с тегом ul и пунктами с тегами li</li>
+		<li>список с тегом ul и пунктами с тегами li</li>
+		<li type="circle">список с тегом ul и пунктами с тегами li</li>			
+	</ul>
+
+	<p class="headOfTitle">Пример вставки картинки:</p>
+	<img src="_img/price.png" alt="альтернативный текст, если нету изображения" width="500" height="500">
+	<p> атрибуты align="left" "right" - задает обтекание рисунка текстом, hspace = "60" vspace = "50" отступы от рисунка</p>
+
+	<p class="headOfTitle">Пример ссылок:</p>
+	<p><a href="../index.html" title="Заголовок-комментарий" target="_blank">На Главную !!!</a></p>
+	<p><a href="_img/price.png" title="скачать файл рисунка" target="_blank">Скачать файл рисунка !!!</a></p>
+	<p><a href="#test_id" title="якорная ссылка" target="_blank">Якорная ссылка для перехода по открытой странице !!!</a></p>
+	<p><a href="mailto:kiranatos@mail.ru" title="Почта" target="_blank">Отправить на почту !!!</a></p>
+	
+	<p class="headOfTitle">Пример таблиц:</p>	
+	<table border="1" width="700" align="center" cellpadding="5" cellspacing="5">
+		<th>1 th</th><th>2 th</th><th>3 th</th><th>4 th</th><th colspan="3">5 th</th>
+		<tr><td>1 td</td><td>2 td</td><td>3 td</td><td>4 td</td>						<td>5</td><td>6</td><td>7</td></tr>
+		<tr><td>1 td</td><td>2 td</td><td>3 td</td><td>4 td</td>						<td>5</td><td>6</td><td>7</td></tr>		
+		<tr><td>1 td</td><td>2 td</td><td>3 td</td><td>4 td</td>						<td>5</td><td>6</td><td>7</td></tr>
+		<tr><td>1</td><td>2</td><td>3</td><td>4</td>						<td>5</td><td>6</td><td>7</td></tr>
+		<tr align="center"><td>1</td><td>2</td><td>3</td><td>4</td>						<td>5</td><td>6</td><td>7</td></tr>		
+		<tr><td>1</td><td>2</td><td>3</td><td>4</td>						<td>5</td><td>6</td><td>7</td></tr>
+		<tr><td rowspan="2">1</td><td>2</td><td>3</td><td>4</td>			<td>5</td><td>6</td><td>7</td></tr>
+		<tr>          <td>2</td><td>3</td><td>4</td>						<td>5</td><td>6</td><td>7</td></tr>			
+	</table>
+	<p> cellpadding="5" - отступы текста внутри таблицы </p>
+	<p> cellspacing="5" - расстояние между ячейками </p>
+
+
+	<p class="headOfTitle">Примеры оформления:</p>	
+	<p> <strong> Жирный ( старый тег: b) новый: &#60strong&#62</strong> </p>
+	<p> <em> Курсив ( старый тег: i) новый: &#60em&#62</em> </p>
+	
+	<p class="headOfTitle">Примеры форм:</p>	
+	<form action="file.php" method="POST" name="form1">	
+		<p><label>Пример текстового поля<input type="text" name="name1" size="33" maxlength="30"></label></p>
+		<p><label>Пример поля для пароля<input type="password" name="name1" size="33" maxlength="30"></label></p>		
+		<p>тег label для клацания по тексту и перехода в текстовое поле</p>
+		<p>атрибут size="33" - на сколько символов текст.поле</p>
+		<p>атрибут maxlength="30" - ограничение на количество вводимых символов</p>			
+	</form>
+
+	<p class="headOfTitle">Пример радиокнопок:</p>		
+		<p><label> одинаковый атрибут name позволяет делать только один выбор <input type="radio" name="name2" value="yes" checked="checked"></label> <label><input type="radio" name="name2" value="no"></label></p>
+		<p>checked - указывает, что пункт должен быть выбран при загрузке</p>
+		
+	<p class="headOfTitle">Пример чекбоксов:</p>				
+		<p><label><input type="checkbox" name="name3" value="yes" checked="checked">1</label> <label><input type="checkbox" name="name4" value="yes" checked="checked">2</label></p>
+
+	<p class="headOfTitle">Примеры выпадающего списка:</p>
+	<select name="name55" size="5" multiple="multiple">
+		<option>1</option>
+		<option value="какое-то значение">2</option>
+		<option>3</option>
+		<option selected="selected">4</option>	
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+		<option>8</option>		
+	</select>
+
+	<select name="name56" size="1">
+		<option>1</option>
+		<option value="какое-то значение">2</option>
+		<option>3</option>
+		<option>4</option>	
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+		<option>8</option>		
+	</select>
+
+<form action="file2.php" method="POST" name="form1">
+	<p class="headOfTitle">Пример текстовой области:</p>
+	<p><label for="text4587">Label для текстовой области связаный через атрибуты neme и for</label></p>
+	<textarea name="text4587" cols="30" rows="6"> текст внутри текстовой области </textarea>
+	
+	<p class="headOfTitle">Примеры кнопок (4 вида):</p>
+		
+	<p><input type="submit" name="sssssss3" value="Отправить"> </p>
+	<p><input type="reset" name="sssssss4" value="Сбросить"> </p>
+	<p><input type="image" name="sssssss5" src="_img/Button.png" width="50" height="50"> </p>
+	<p><input type="button" name="sssssss6" value="Просто кнопка"> </p>	
+</form>
+
+	<p class="headOfTitle">Пример декоративного объединения тег fieldset:</p>
+	<fieldset>
+		<legend>Легенда</legend>
+		<p>some text</p>
+	</fieldset>
+
+	<p class="headOfTitle">Пример атрибута блокировки disabled:</p>	
+		<p><textarea name="text4587" cols="30" rows="6" disabled="disabled"> текст внутри текстовой области </textarea></p>
+		<p><input type="checkbox" name="name3" value="yes" checked="checked" disabled="disabled"></p>
+
+	<p class="headOfTitle">Пример атрибута readonly :</p>	
+		<p><textarea name="text4587" cols="30" rows="6" readonly="readonly"> текст внутри текстовой области </textarea></p>
+		<p><input type="checkbox" name="name3" value="yes"  readonly="readonly"></p>
+
+	<p class="headOfTitle">Метод GET и POST :</p>	
+	<p> В теге: form action="file.php" method="POST" name="form1" </p>
+	<p> В файлe PHP:</p>
+	<img src="_img/php1.jpg" alt="файл PHP">
+	<p> где password, name, sleep - значения атрибута name разных объектов </p>
+	<p> при POST в строке браузера отображается: http://vk.com/away.php, при GET: http://vk.com/away.php?sel=33591890&a=5&rty=6
+
+	<p class="headOfTitle">Отправка писем :</p>
+	<img src="_img/mail_1.jpg">
+	<img src="_img/mail_2.jpg">
+	<img src="_img/mail_3.jpg">
+	<img src="_img/mail_4.jpg">
+
+	<p class="headOfTitle">Пример вставки видео :</p>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/2WEfJ2zBFqs" frameborder="0" allowfullscreen></iframe>
+	<iframe src="//vk.com/video_ext.php?oid=282632372&id=171094268&hash=777536e44282eb8f&hd=2" width="853" height="480"  frameborder="0"></iframe>
+	
+	<p class="headOfTitle">Предварительное форматирование :</p>	
+	<pre>
+	Гимн Люциферу.
+
+Ты был отвержен,
+Ты был покинут,
+Ты был обречен.
+Но были силы;
+Ты рвался к победе,
+Поднялся с мечом.
+Люцифер! Да светится во мраке
+Имя твое, Сатана!
+Мы с тобою как братья,
+Ты светишь мне как звезда.
+
+И за смертью, за гробом
+Я спущусь к тебе в ад.
+По тенистой дороге
+Я найду путь назад –
+
+В царство смерти и льда,
+Где любовь как вражда.
+На греховном пути
+За собою веди
+Нас всегда
+Сквозь года!
+	</pre>
+	
+	<p class="headOfTitle">Карта изображения :</p>	
+	<img src="_img/map_img.jpg" alt="Карта изображения" border="2" width="800" usemap="#imgmap201541911652">
+	<map id="imgmap201541911652" name="imgmap201541911652">
+		<area shape="rect" alt="" title="" coords="4,5,36,38" href="https://mail.ru/" target="_blank" />
+		<area shape="rect" alt="" title="" coords="47,4,83,37" href="https://mail.google.com" target="_blank" />
+		<area shape="rect" alt="" title="" coords="91,3,128,41" href="https://vk.com/id282632372" target="_blank" />
+		<area shape="rect" alt="" title="" coords="134,5,274,45" href="http://javarush.ru/" target="_blank" />
+		<area shape="rect" alt="" title="" coords="281,5,391,44" href="http://www.ex.ua/" target="_blank" />
+		<area shape="rect" alt="" title="" coords="3,48,153,91" href="http://gameguru.ru/pc/games/released/list.html" target="_blank" />
+		<!-- Created by Online Image Map Editor (http://www.maschek.hu/imagemap/index) -->
+	</map>
+	<p>С помощью сайта <a href="http://www.maschek.hu/imagemap" title="Сайт для создания карты изображения" target="_blank">www.maschek.hu</a> можно создавать карту изображения</p>
+	
+	<p class="headOfTitle">Мета-теги (Служебные) :</p>
+	<img src="_img/meta.jpg" width="800">
+	
+</div>
+</body>
+</html>

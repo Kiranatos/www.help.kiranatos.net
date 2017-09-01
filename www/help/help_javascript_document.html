@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Свойства document</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="_css/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <script type="text/javascript">
+                var option;
+                document.write("<h1>Свойства document</h1>");
+                for (option in document) {
+                    document.write("<strong>" + option + ' : ' + "</strong>" + document[option] + "<br />");
+                }
+                
+            </script>
+        </div>
+    </body>
+</html>

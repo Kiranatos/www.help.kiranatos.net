@@ -1,0 +1,75 @@
+/* CSS Document */
+@import "file2.css";
+@import url("file1.css");
+
+body {
+	background-attachment: fixed;
+	background-color: #40E7FA;
+	background-image: url(../_img/fon.jpg);
+	background-repeat: repeat;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.wrapper {
+	font-family:"Times New Roman", Times, serif;
+	font-size: 16px;
+	background-position: center center;
+	background-color: #FFFFFF;
+	padding: 10px;
+	height: auto;
+	width: 950px;
+	border: thin solid #FF00FF;
+	font-style: normal;
+	font-weight: normal;
+	left: auto;
+	right: auto;
+	top: auto;
+	bottom: auto;
+	clip: rect(auto,auto,auto,auto);
+	margin-top: 10px;
+	margin-right: auto;
+	margin-bottom: 25px;
+	margin-left: auto;
+}
+
+.headOfTitle {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	text-align:center;
+	color:#0000FF;
+}
+
+.comment {
+	font-family:Geneva, Arial, Helvetica, sans-serif;
+	font-weight:bold;	
+	color:#6495ED;
+	line-height:5px;
+}
+.primer {
+	font-family: "Courier New", Courier, monospace;
+	color:#0000FF;
+	line-height:55px;
+}
+
+.wwww {
+	font-family:"Courier New", Courier, monospace;
+	font-size: 22px;
+	font-weight:bold;
+	color:#9932CC;
+}
+
+.videokurs {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:16px;
+	font-weight:bold;
+	color:#9900FF;
+}
+
+.block {
+	border: 4px dotted #6633FF;
+	padding:5px 20px;
+        margin: 5px auto;
+}
